@@ -129,11 +129,83 @@
             android:fontFamily="@font/economicabold"
             android:text="2021"/>
     </LinearLayout>
-
-    <androidx.recyclerview.widget.RecyclerView
-        android:layout_marginTop="10dp"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        ></androidx.recyclerview.widget.RecyclerView>
+        android:layout_marginTop="30dp"
+        android:background="@drawable/event_frame"
+        android:layout_marginRight="30dp">
+        <LinearLayout
+            android:layout_width="100dp"
+            android:layout_height="match_parent"
+            android:background="@color/event_blue"
+            android:gravity="center"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:textColor="@color/white"
+                android:text="25"
+                android:fontFamily="@font/economicabold"
+                android:textSize="40sp"/>
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:textColor="@color/white"
+                android:text="Sunday"
+                android:fontFamily="@font/economicabold"
+                android:textSize="35sp"/>
+        </LinearLayout>
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="match_parent"
+            android:orientation="vertical">
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
 
+            android:textColor="@color/black"
+            android:fontFamily="@font/economicabold"
+            android:textSize="30sp"
+            android:text="Activity Title"/>
+        <TextView
+            android:layout_margin="10dp"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+
+            android:textColor="@color/black"
+            android:fontFamily="@font/economicaregular"
+            android:textSize="30sp"
+            android:text="Time:"/>
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/black"
+                android:fontFamily="@font/economicaregular"
+                android:textSize="30sp"
+                android:text="Location:"/>
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/black"
+                android:fontFamily="@font/economicaregular"
+                android:textSize="30sp"
+                android:text="Details:"/>
+            <TextView
+                android:layout_margin="10dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+
+                android:textColor="@color/black"
+                android:fontFamily="@font/economicaregular"
+                android:textSize="30sp"
+                android:text="Notification Type:"/>
+        </LinearLayout>
+
+    </LinearLayout>
 </LinearLayout>
