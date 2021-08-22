@@ -1,0 +1,46 @@
+[
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_main.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_sign_up.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_sign_up.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_single_event.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_single_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_event.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_edit_event.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_edit_event.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_welcome.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_welcome.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_event_dayspecific.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event_dayspecific.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_log_in_2.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_log_in_2.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_events.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_events.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_log_in.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_log_in.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_events_dayspecific.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_events_dayspecific.xml"
+    }
+]

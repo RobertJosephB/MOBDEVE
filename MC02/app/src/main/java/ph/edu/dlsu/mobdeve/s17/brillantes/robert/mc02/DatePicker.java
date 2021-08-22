@@ -5,9 +5,11 @@ import android.app.Dialog;
 import android.os.Bundle;
 import android.widget.DatePicker;
 
+import androidx.fragment.app.DialogFragment;
+
 import java.util.Calendar;
 
-public static class DatePickerFragment extends DialogFragment
+class DatePickerFragment extends DialogFragment
         implements DatePickerDialog.OnDateSetListener {
 
     @Override
