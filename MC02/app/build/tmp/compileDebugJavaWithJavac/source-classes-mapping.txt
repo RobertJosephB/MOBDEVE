@@ -1,0 +1,33 @@
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityWelcomeBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityWelcomeBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/DatePicker.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.DatePickerFragment
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/EventModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ItemEventDayspecificBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ItemEventDayspecificBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityEditEventBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEditEventBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySingleEventBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySingleEventBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityLogIn2Binding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogIn2Binding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityEventsDayspecificBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEventsDayspecificBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityMainBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityMainBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter$EventViewHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityLogInBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogInBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySignUpBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySignUpBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/LogIn.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/MainActivity.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.MainActivity
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/BuildConfig.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.BuildConfig
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_DaySpecific.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific
