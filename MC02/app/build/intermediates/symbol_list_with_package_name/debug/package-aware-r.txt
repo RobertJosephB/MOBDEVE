@@ -1966,6 +1966,11 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_finishSignUp
+id btn_goToSignUp
+id btn_goToSignUp2
+id btn_logIn
+id btn_returnToLogIn
 id buttonPanel
 id cache_measures
 id cancel_button
@@ -2043,6 +2048,13 @@ id end
 id endToStart
 id enterAlways
 id enterAlwaysCollapsed
+id et_SU_confirmPassword
+id et_SU_email
+id et_SU_firstName
+id et_SU_lastName
+id et_SU_password
+id et_email
+id et_password
 id exitUntilCollapsed
 id expand_activities_button
 id expanded_menu
@@ -2417,9 +2429,8 @@ layout abc_tooltip
 layout activity_edit_event
 layout activity_events_dayspecific
 layout activity_log_in
-layout activity_log_in_2
-layout activity_main
 layout activity_sign_up
+layout activity_sign_up2
 layout activity_single_event
 layout activity_welcome
 layout custom_dialog

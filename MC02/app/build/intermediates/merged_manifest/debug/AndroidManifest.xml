@@ -19,17 +19,17 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MC02" >
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" >
-        </activity>
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.MainActivity" >
-        </activity>
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" >
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
     </application>
 
 </manifest>
