@@ -29,6 +29,7 @@
         <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
         <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
         <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main" />
         <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
     </application>
 

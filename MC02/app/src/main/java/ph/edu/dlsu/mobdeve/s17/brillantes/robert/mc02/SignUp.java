@@ -28,6 +28,8 @@ public class SignUp extends AppCompatActivity {
 
             if (su_email.equals("")) {
                 Snackbar.make(v, "Email field is empty.", Snackbar.LENGTH_SHORT).show();
+            } else if (su_password.equals("") && su_confirmPassword.equals("")) {
+                Snackbar.make(v, "Please fill up all fields.", Snackbar.LENGTH_SHORT).show();
             } else {
                 if (su_password.equals(su_confirmPassword)) {
                     bundle.putString("email", su_email);

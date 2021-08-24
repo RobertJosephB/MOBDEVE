@@ -12,20 +12,24 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\navigation\\nav_graph.xml"
     },
     {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_events_main.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_events_main.xml"
+    },
+    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_event_dayspecific.xml.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event_dayspecific.xml"
     },
     {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\font_economicaregular.ttf.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\font\\economicaregular.ttf"
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable_event_frame.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable\\event_frame.xml"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in.xml.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_log_in.xml"
     },
     {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable_event_frame.xml.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable\\event_frame.xml"
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\font_economicaregular.ttf.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\font\\economicaregular.ttf"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable_ic_launcher_background.xml.flat",
@@ -106,6 +110,10 @@
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blank_pic.png.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable\\blank_pic.png"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_event_small.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\event_small.xml"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_events_dayspecific.xml.flat",

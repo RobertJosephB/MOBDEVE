@@ -2217,6 +2217,7 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
+id rv_eventMain_list
 id rv_event_list
 id save_non_transition_alpha
 id save_overlay_view
@@ -2428,6 +2429,7 @@ layout abc_select_dialog_material
 layout abc_tooltip
 layout activity_edit_event
 layout activity_events_dayspecific
+layout activity_events_main
 layout activity_log_in
 layout activity_sign_up
 layout activity_sign_up2
@@ -2449,6 +2451,7 @@ layout design_navigation_menu
 layout design_navigation_menu_item
 layout design_text_input_end_icon
 layout design_text_input_start_icon
+layout event_small
 layout item_event_dayspecific
 layout material_chip_input_combo
 layout material_clock_display

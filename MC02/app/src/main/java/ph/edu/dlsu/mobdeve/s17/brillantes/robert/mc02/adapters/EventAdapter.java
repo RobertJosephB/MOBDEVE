@@ -43,7 +43,6 @@ public class EventAdapter
     @Override
     public void onBindViewHolder(EventAdapter.EventViewHolder holder, int position) {
         holder.tv_dayNumber.setText(eventList.get(position).getDayNumber());
-        holder.tv_dayName.setText(eventList.get(position).getDayName());
         holder.tv_eventTitle.setText(eventList.get(position).getEventTitle());
         holder.tv_time.setText(eventList.get(position).getTime());
 
