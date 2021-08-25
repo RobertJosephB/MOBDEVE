@@ -1174,6 +1174,7 @@ int color error_color_material_light 0x7f05005b
 int color event_blue 0x7f05005c
 int color foreground_material_dark 0x7f05005d
 int color foreground_material_light 0x7f05005e
+int color gray 0x7f0500d7
 int color highlighted_text_material_dark 0x7f05005f
 int color highlighted_text_material_light 0x7f050060
 int color material_blue_grey_800 0x7f050061
@@ -2329,11 +2330,13 @@ int id transition_position 0x7f0901ce
 int id transition_scene_layoutid_cache 0x7f0901cf
 int id transition_transform 0x7f0901d0
 int id triangle 0x7f0901d1
-int id tv_dayName 0x7f0901d2
+int id tv_currentMonth 0x7f0901ef
+int id tv_currentYear 0x7f0901f0
 int id tv_dayNumber 0x7f0901d3
 int id tv_delete 0x7f0901d4
 int id tv_details 0x7f0901d5
 int id tv_eventTitle 0x7f0901d6
+int id tv_monthName 0x7f0901f1
 int id tv_notifyType 0x7f0901d7
 int id tv_time 0x7f0901d8
 int id unchecked 0x7f0901d9
@@ -2452,6 +2455,7 @@ int layout design_text_input_end_icon 0x7f0c0032
 int layout design_text_input_start_icon 0x7f0c0033
 int layout event_small 0x7f0c0034
 int layout item_event_dayspecific 0x7f0c0035
+int layout item_event_main 0x7f0c007a
 int layout material_chip_input_combo 0x7f0c0036
 int layout material_clock_display 0x7f0c0037
 int layout material_clock_display_divider 0x7f0c0038

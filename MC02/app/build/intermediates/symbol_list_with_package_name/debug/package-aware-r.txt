@@ -1175,6 +1175,7 @@ color error_color_material_light
 color event_blue
 color foreground_material_dark
 color foreground_material_light
+color gray
 color highlighted_text_material_dark
 color highlighted_text_material_light
 color material_blue_grey_800
@@ -2330,11 +2331,13 @@ id transition_position
 id transition_scene_layoutid_cache
 id transition_transform
 id triangle
-id tv_dayName
+id tv_currentMonth
+id tv_currentYear
 id tv_dayNumber
 id tv_delete
 id tv_details
 id tv_eventTitle
+id tv_monthName
 id tv_notifyType
 id tv_time
 id unchecked
@@ -2453,6 +2456,7 @@ layout design_text_input_end_icon
 layout design_text_input_start_icon
 layout event_small
 layout item_event_dayspecific
+layout item_event_main
 layout material_chip_input_combo
 layout material_clock_display
 layout material_clock_display_divider

@@ -5,6 +5,7 @@ import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.recyclerview.widget.RecyclerView;
@@ -21,10 +22,19 @@ public final class ActivityEventsMainBinding implements ViewBinding {
   @NonNull
   public final RecyclerView rvEventMainList;
 
+  @NonNull
+  public final TextView tvCurrentMonth;
+
+  @NonNull
+  public final TextView tvCurrentYear;
+
   private ActivityEventsMainBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView rvEventMainList) {
+      @NonNull RecyclerView rvEventMainList, @NonNull TextView tvCurrentMonth,
+      @NonNull TextView tvCurrentYear) {
     this.rootView = rootView;
     this.rvEventMainList = rvEventMainList;
+    this.tvCurrentMonth = tvCurrentMonth;
+    this.tvCurrentYear = tvCurrentYear;
   }
 
   @Override
@@ -60,7 +70,20 @@ public final class ActivityEventsMainBinding implements ViewBinding {
         break missingId;
       }
 
-      return new ActivityEventsMainBinding((LinearLayout) rootView, rvEventMainList);
+      id = R.id.tv_currentMonth;
+      TextView tvCurrentMonth = rootView.findViewById(id);
+      if (tvCurrentMonth == null) {
+        break missingId;
+      }
+
+      id = R.id.tv_currentYear;
+      TextView tvCurrentYear = rootView.findViewById(id);
+      if (tvCurrentYear == null) {
+        break missingId;
+      }
+
+      return new ActivityEventsMainBinding((LinearLayout) rootView, rvEventMainList, tvCurrentMonth,
+          tvCurrentYear);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

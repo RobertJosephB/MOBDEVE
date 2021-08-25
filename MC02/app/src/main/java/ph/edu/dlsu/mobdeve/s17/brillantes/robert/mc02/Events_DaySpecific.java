@@ -24,13 +24,13 @@ public class Events_DaySpecific extends AppCompatActivity {
         setContentView(binding.getRoot());
 
         // dummy data
-        init();
+        // init();
 
         eventAdapter = new EventAdapter(getApplicationContext(), eventList);
         binding.rvEventList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventList.setAdapter(eventAdapter);
     }
-    // /*
+    /*
     private void init() {
         eventList = new ArrayList<>();
 

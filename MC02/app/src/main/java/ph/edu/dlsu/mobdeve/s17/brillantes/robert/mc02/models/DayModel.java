@@ -4,14 +4,17 @@ import java.util.ArrayList;
 
 public class DayModel {
 
-    private String                  dayNumber;
+    private String                  dayNum;
+    private String                  monthName;
     private ArrayList<EventModel>   events;
 
-    public DayModel(int num) {
-        this.dayNumber = "" + num;
+    public DayModel(int num, String monthName) {
+        this.dayNum = "" + num;
+        this.monthName = monthName;
         this.events = new ArrayList<>();
         this.events.add(new EventModel(
-                this.dayNumber,
+                this.dayNum,
+                this.monthName,
                 "No events",
                 "",
                 "",
@@ -21,12 +24,16 @@ public class DayModel {
     }
 
     public String getDayNumber() {
-        return dayNumber;
+        return dayNum;
     }
 
     public void setDayNumber(String dayNumber) {
-        this.dayNumber = dayNumber;
+        this.dayNum = dayNumber;
     }
+
+    public String getMonthName() { return monthName; }
+
+    public void setMonthName(String monthName) { this.monthName = monthName; }
 
     public ArrayList<EventModel> getEvents() {
         return events;

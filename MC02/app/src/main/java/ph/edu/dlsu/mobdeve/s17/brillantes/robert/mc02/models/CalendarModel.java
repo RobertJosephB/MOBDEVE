@@ -10,6 +10,8 @@ public class CalendarModel {
 
         int i;
 
+        this.calendar = new ArrayList<>();
+
         for (i = 2021; i < 2022; i++) {
             this.calendar.add(new YearModel(i));
         }

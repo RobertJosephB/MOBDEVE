@@ -28,6 +28,10 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event_dayspecific.xml"
     },
     {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\item_event_main.xml",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event_main.xml"
+    },
+    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\incremental\\mergeDebugResources\\stripped.dir\\layout\\activity_log_in.xml",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_log_in.xml"
     },
