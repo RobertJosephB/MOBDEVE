@@ -18,8 +18,8 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 public class EventAdapter
                 extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
 
-    private ArrayList<EventModel> eventList;
     private Context context;
+    private ArrayList<EventModel> eventList;
 
     public EventAdapter(Context context, ArrayList<EventModel> eventList) {
         this.context = context;

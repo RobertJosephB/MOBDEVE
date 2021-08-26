@@ -1,28 +1,29 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class CalendarModel {
+public class CalendarModel implements Serializable {
 
-    private ArrayList<YearModel> calendar;
+    private ArrayList<YearModel> years;
 
     public CalendarModel() {
 
         int i;
 
-        this.calendar = new ArrayList<>();
+        this.years = new ArrayList<>();
 
         for (i = 2021; i < 2022; i++) {
-            this.calendar.add(new YearModel(i));
+            this.years.add(new YearModel(i));
         }
 
     }
 
-    public ArrayList<YearModel> getCalendar() {
-        return calendar;
+    public ArrayList<YearModel> getYears() {
+        return years;
     }
 
-    public void setCalendar(ArrayList<YearModel> calendar) {
-        this.calendar = calendar;
+    public void setYears(ArrayList<YearModel> years) {
+        this.years = years;
     }
 }

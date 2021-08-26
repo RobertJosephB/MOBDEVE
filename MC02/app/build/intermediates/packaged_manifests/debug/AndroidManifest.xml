@@ -5,7 +5,7 @@
     android:versionName="1.0" >
 
     <uses-sdk
-        android:minSdkVersion="23"
+        android:minSdkVersion="26"
         android:targetSdkVersion="30" />
 
     <application
@@ -19,6 +19,7 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MC02" >
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth" />
         <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

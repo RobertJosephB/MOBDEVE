@@ -1,6 +1,8 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models;
 
-public class EventModel {
+import java.io.Serializable;
+
+public class EventModel implements Serializable {
 
     private String dayNumber;
     private String monthName;

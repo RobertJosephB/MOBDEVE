@@ -1,8 +1,9 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class DayModel {
+public class DayModel implements Serializable {
 
     private String                  dayNum;
     private String                  monthName;

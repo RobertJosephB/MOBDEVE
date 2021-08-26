@@ -1,9 +1,9 @@
 -- Merging decision tree log ---
 manifest
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
 MERGED from [androidx.databinding:viewbinding:4.2.2] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\e100e1d87f3eab663026c1e722d50103\viewbinding-4.2.2\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.navigation:navigation-ui:2.3.5] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\964bbc8f20eb7c96ad970a8ac9ea4eac\navigation-ui-2.3.5\AndroidManifest.xml:17:1-24:12
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:17:1-24:12
@@ -44,25 +44,25 @@ MERGED from [androidx.documentfile:documentfile:1.0.0] C:\Users\geloa\.gradle\ca
 MERGED from [androidx.localbroadcastmanager:localbroadcastmanager:1.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b93e2b8a7319b8231fdc1936a598b860\localbroadcastmanager-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.print:print:1.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\f8503f66578d12caa389b09e1e5eca48\print-1.0.0\AndroidManifest.xml:17:1-22:12
 MERGED from [androidx.annotation:annotation-experimental:1.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\8b1826e082b884f9fc593d27a9580a45\annotation-experimental-1.0.0\AndroidManifest.xml:17:1-24:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
-INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
+INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
 	package
 		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:3:5-61
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 	android:versionName
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 	android:versionCode
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-26:12
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:1-27:12
 		INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 	xmlns:android
 		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:2:11-69
 application
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-24:19
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-25:19
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [com.google.android.material:material:1.4.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\10046aad9e73cbf22653afacdcab8838\material-1.4.0\AndroidManifest.xml:22:5-20
 MERGED from [androidx.constraintlayout:constraintlayout:2.1.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\e0f2c8bfb3f4e90e7e3551239c93e924\constraintlayout-2.1.0\AndroidManifest.xml:9:5-20
@@ -85,40 +85,44 @@ MERGED from [androidx.versionedparcelable:versionedparcelable:1.1.1] C:\Users\ge
 		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:6:9-35
 	android:theme
 		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:11:9-42
+activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-58
+	android:name
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-46
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-18:20
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:9-19:20
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-42
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:19-42
 intent-filter#action:name:android.intent.action.MAIN+category:name:android.intent.category.LAUNCHER
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:13-17:29
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:13-18:29
 action#android.intent.action.MAIN
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:17-69
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:17-69
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:25-66
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:25-66
 category#android.intent.category.LAUNCHER
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:16:17-77
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:17-77
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:16:27-74
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:27-74
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:19:9-43
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-43
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:19:19-40
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-40
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-44
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-44
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-41
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-41
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-45
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-45
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-42
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-42
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-49
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-49
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-46
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-46
 activity#ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific
-ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-56
+ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:9-56
 	android:name
-		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-53
+		ADDED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:19-53
 uses-sdk
 INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml reason: use-sdk injection requested
 INJECTED from C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml

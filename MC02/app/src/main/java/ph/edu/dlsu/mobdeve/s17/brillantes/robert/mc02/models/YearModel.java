@@ -1,8 +1,9 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 
-public class YearModel {
+public class YearModel implements Serializable {
 
     private String                yearNum;
     private ArrayList<MonthModel> months;

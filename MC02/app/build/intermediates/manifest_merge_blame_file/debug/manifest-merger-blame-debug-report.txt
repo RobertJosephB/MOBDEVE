@@ -5,13 +5,13 @@
 5    android:versionName="1.0" >
 6
 7    <uses-sdk
-8        android:minSdkVersion="23"
+8        android:minSdkVersion="26"
 8-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 9        android:targetSdkVersion="30" />
 9-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 10
 11    <application
-11-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-24:19
+11-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-25:19
 12        android:allowBackup="true"
 12-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:6:9-35
 13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
@@ -29,35 +29,38 @@
 20        android:testOnly="true"
 21        android:theme="@style/Theme.MC02" >
 21-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:11:9-42
-22        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
-22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-18:20
-22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-42
-23            <intent-filter>
-23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:13-17:29
-24                <action android:name="android.intent.action.MAIN" />
-24-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:17-69
-24-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:25-66
-25
-26                <category android:name="android.intent.category.LAUNCHER" />
-26-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:16:17-77
-26-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:16:27-74
-27            </intent-filter>
-28        </activity>
-29        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
-29-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:19:9-43
-29-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:19:19-40
-30        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
-30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-44
-30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-41
-31        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
-31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-45
-31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-42
-32        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main" />
-32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-49
-32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-46
-33        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
-33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-56
-33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-53
-34    </application>
-35
-36</manifest>
+22        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth" />
+22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-58
+22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-46
+23        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
+23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:9-19:20
+23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:19-42
+24            <intent-filter>
+24-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:13-18:29
+25                <action android:name="android.intent.action.MAIN" />
+25-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:17-69
+25-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:25-66
+26
+27                <category android:name="android.intent.category.LAUNCHER" />
+27-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:17-77
+27-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:27-74
+28            </intent-filter>
+29        </activity>
+30        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
+30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-43
+30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-40
+31        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
+31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-44
+31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-41
+32        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
+32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-45
+32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-42
+33        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main" />
+33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-49
+33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-46
+34        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
+34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:9-56
+34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:19-53
+35    </application>
+36
+37</manifest>
