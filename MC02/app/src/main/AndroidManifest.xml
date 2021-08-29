@@ -9,19 +9,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MC02">
-        <activity android:name=".LogIn">
-
-        </activity>
-        <activity android:name=".MainActivity">
-
-        </activity>
-        <activity android:name=".Events_DaySpecific">
+        <activity android:name=".ChangeMonth"></activity>
+        <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".LogIn" />
+        <activity android:name=".SignUp" />
+        <activity android:name=".SignUp2" />
+        <activity android:name=".Events_Main" />
+        <activity android:name=".Events_DaySpecific" />
     </application>
 
 </manifest>

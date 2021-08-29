@@ -18,8 +18,8 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 public class EventAdapter
                 extends RecyclerView.Adapter<EventAdapter.EventViewHolder> {
 
-    private ArrayList<EventModel> eventList;
     private Context context;
+    private ArrayList<EventModel> eventList;
 
     public EventAdapter(Context context, ArrayList<EventModel> eventList) {
         this.context = context;
@@ -43,7 +43,7 @@ public class EventAdapter
     @Override
     public void onBindViewHolder(EventAdapter.EventViewHolder holder, int position) {
         holder.tv_dayNumber.setText(eventList.get(position).getDayNumber());
-        holder.tv_dayName.setText(eventList.get(position).getDayName());
+        holder.tv_monthName.setText(eventList.get(position).getMonthName());
         holder.tv_eventTitle.setText(eventList.get(position).getEventTitle());
         holder.tv_time.setText(eventList.get(position).getTime());
 
@@ -58,7 +58,7 @@ public class EventAdapter
 
     protected class EventViewHolder extends RecyclerView.ViewHolder{
         TextView tv_dayNumber;
-        TextView tv_dayName;
+        TextView tv_monthName;
         TextView tv_eventTitle;
         TextView tv_time;
         TextView tv_delete;
@@ -67,7 +67,7 @@ public class EventAdapter
         public EventViewHolder(View view) {
             super(view);
             tv_dayNumber = view.findViewById(R.id.tv_dayNumber);
-            tv_dayName = view.findViewById(R.id.tv_dayName);
+            tv_monthName = view.findViewById(R.id.tv_monthName);
             tv_eventTitle = view.findViewById(R.id.tv_eventTitle);
             tv_time = view.findViewById(R.id.tv_time);
             tv_delete = view.findViewById(R.id.tv_delete);

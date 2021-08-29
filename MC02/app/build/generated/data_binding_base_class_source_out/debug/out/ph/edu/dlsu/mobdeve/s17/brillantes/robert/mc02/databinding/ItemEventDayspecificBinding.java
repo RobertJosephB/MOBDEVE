@@ -22,9 +22,6 @@ public final class ItemEventDayspecificBinding implements ViewBinding {
   public final LinearLayout llEventClickable;
 
   @NonNull
-  public final TextView tvDayName;
-
-  @NonNull
   public final TextView tvDayNumber;
 
   @NonNull
@@ -34,18 +31,21 @@ public final class ItemEventDayspecificBinding implements ViewBinding {
   public final TextView tvEventTitle;
 
   @NonNull
+  public final TextView tvMonthName;
+
+  @NonNull
   public final TextView tvTime;
 
   private ItemEventDayspecificBinding(@NonNull LinearLayout rootView,
-      @NonNull LinearLayout llEventClickable, @NonNull TextView tvDayName,
-      @NonNull TextView tvDayNumber, @NonNull TextView tvDelete, @NonNull TextView tvEventTitle,
+      @NonNull LinearLayout llEventClickable, @NonNull TextView tvDayNumber,
+      @NonNull TextView tvDelete, @NonNull TextView tvEventTitle, @NonNull TextView tvMonthName,
       @NonNull TextView tvTime) {
     this.rootView = rootView;
     this.llEventClickable = llEventClickable;
-    this.tvDayName = tvDayName;
     this.tvDayNumber = tvDayNumber;
     this.tvDelete = tvDelete;
     this.tvEventTitle = tvEventTitle;
+    this.tvMonthName = tvMonthName;
     this.tvTime = tvTime;
   }
 
@@ -82,12 +82,6 @@ public final class ItemEventDayspecificBinding implements ViewBinding {
         break missingId;
       }
 
-      id = R.id.tv_dayName;
-      TextView tvDayName = rootView.findViewById(id);
-      if (tvDayName == null) {
-        break missingId;
-      }
-
       id = R.id.tv_dayNumber;
       TextView tvDayNumber = rootView.findViewById(id);
       if (tvDayNumber == null) {
@@ -106,14 +100,20 @@ public final class ItemEventDayspecificBinding implements ViewBinding {
         break missingId;
       }
 
+      id = R.id.tv_monthName;
+      TextView tvMonthName = rootView.findViewById(id);
+      if (tvMonthName == null) {
+        break missingId;
+      }
+
       id = R.id.tv_time;
       TextView tvTime = rootView.findViewById(id);
       if (tvTime == null) {
         break missingId;
       }
 
-      return new ItemEventDayspecificBinding((LinearLayout) rootView, llEventClickable, tvDayName,
-          tvDayNumber, tvDelete, tvEventTitle, tvTime);
+      return new ItemEventDayspecificBinding((LinearLayout) rootView, llEventClickable, tvDayNumber,
+          tvDelete, tvEventTitle, tvMonthName, tvTime);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));
