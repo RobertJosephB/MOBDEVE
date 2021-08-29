@@ -1967,6 +1967,19 @@ id bounce
 id bounceBoth
 id bounceEnd
 id bounceStart
+id btn_changeMonth
+id btn_changeToApril
+id btn_changeToAugust
+id btn_changeToDecember
+id btn_changeToFebruary
+id btn_changeToJanuary
+id btn_changeToJuly
+id btn_changeToJune
+id btn_changeToMarch
+id btn_changeToMay
+id btn_changeToNovember
+id btn_changeToOctober
+id btn_changeToSeptember
 id btn_finishSignUp
 id btn_goToSignUp
 id btn_goToSignUp2
@@ -2210,7 +2223,6 @@ id progress_circular
 id progress_horizontal
 id radio
 id ratio
-id rb_monthOption
 id rectangles
 id reverseSawtooth
 id right
@@ -2219,7 +2231,6 @@ id right_icon
 id right_side
 id rounded
 id row_index_key
-id rv_changeMonthList
 id rv_eventMain_list
 id rv_event_list
 id save_non_transition_alpha

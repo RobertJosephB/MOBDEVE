@@ -7,7 +7,7 @@ import android.view.ViewGroup;
 import android.widget.LinearLayout;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
-import androidx.recyclerview.widget.RecyclerView;
+import androidx.appcompat.widget.AppCompatButton;
 import androidx.viewbinding.ViewBinding;
 import java.lang.NullPointerException;
 import java.lang.Override;
@@ -19,12 +19,61 @@ public final class ActivityChangeMonthBinding implements ViewBinding {
   private final LinearLayout rootView;
 
   @NonNull
-  public final RecyclerView rvChangeMonthList;
+  public final AppCompatButton btnChangeToApril;
+
+  @NonNull
+  public final AppCompatButton btnChangeToAugust;
+
+  @NonNull
+  public final AppCompatButton btnChangeToDecember;
+
+  @NonNull
+  public final AppCompatButton btnChangeToFebruary;
+
+  @NonNull
+  public final AppCompatButton btnChangeToJanuary;
+
+  @NonNull
+  public final AppCompatButton btnChangeToJuly;
+
+  @NonNull
+  public final AppCompatButton btnChangeToJune;
+
+  @NonNull
+  public final AppCompatButton btnChangeToMarch;
+
+  @NonNull
+  public final AppCompatButton btnChangeToMay;
+
+  @NonNull
+  public final AppCompatButton btnChangeToNovember;
+
+  @NonNull
+  public final AppCompatButton btnChangeToOctober;
+
+  @NonNull
+  public final AppCompatButton btnChangeToSeptember;
 
   private ActivityChangeMonthBinding(@NonNull LinearLayout rootView,
-      @NonNull RecyclerView rvChangeMonthList) {
+      @NonNull AppCompatButton btnChangeToApril, @NonNull AppCompatButton btnChangeToAugust,
+      @NonNull AppCompatButton btnChangeToDecember, @NonNull AppCompatButton btnChangeToFebruary,
+      @NonNull AppCompatButton btnChangeToJanuary, @NonNull AppCompatButton btnChangeToJuly,
+      @NonNull AppCompatButton btnChangeToJune, @NonNull AppCompatButton btnChangeToMarch,
+      @NonNull AppCompatButton btnChangeToMay, @NonNull AppCompatButton btnChangeToNovember,
+      @NonNull AppCompatButton btnChangeToOctober, @NonNull AppCompatButton btnChangeToSeptember) {
     this.rootView = rootView;
-    this.rvChangeMonthList = rvChangeMonthList;
+    this.btnChangeToApril = btnChangeToApril;
+    this.btnChangeToAugust = btnChangeToAugust;
+    this.btnChangeToDecember = btnChangeToDecember;
+    this.btnChangeToFebruary = btnChangeToFebruary;
+    this.btnChangeToJanuary = btnChangeToJanuary;
+    this.btnChangeToJuly = btnChangeToJuly;
+    this.btnChangeToJune = btnChangeToJune;
+    this.btnChangeToMarch = btnChangeToMarch;
+    this.btnChangeToMay = btnChangeToMay;
+    this.btnChangeToNovember = btnChangeToNovember;
+    this.btnChangeToOctober = btnChangeToOctober;
+    this.btnChangeToSeptember = btnChangeToSeptember;
   }
 
   @Override
@@ -54,13 +103,82 @@ public final class ActivityChangeMonthBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.rv_changeMonthList;
-      RecyclerView rvChangeMonthList = rootView.findViewById(id);
-      if (rvChangeMonthList == null) {
+      id = R.id.btn_changeToApril;
+      AppCompatButton btnChangeToApril = rootView.findViewById(id);
+      if (btnChangeToApril == null) {
         break missingId;
       }
 
-      return new ActivityChangeMonthBinding((LinearLayout) rootView, rvChangeMonthList);
+      id = R.id.btn_changeToAugust;
+      AppCompatButton btnChangeToAugust = rootView.findViewById(id);
+      if (btnChangeToAugust == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToDecember;
+      AppCompatButton btnChangeToDecember = rootView.findViewById(id);
+      if (btnChangeToDecember == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToFebruary;
+      AppCompatButton btnChangeToFebruary = rootView.findViewById(id);
+      if (btnChangeToFebruary == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToJanuary;
+      AppCompatButton btnChangeToJanuary = rootView.findViewById(id);
+      if (btnChangeToJanuary == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToJuly;
+      AppCompatButton btnChangeToJuly = rootView.findViewById(id);
+      if (btnChangeToJuly == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToJune;
+      AppCompatButton btnChangeToJune = rootView.findViewById(id);
+      if (btnChangeToJune == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToMarch;
+      AppCompatButton btnChangeToMarch = rootView.findViewById(id);
+      if (btnChangeToMarch == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToMay;
+      AppCompatButton btnChangeToMay = rootView.findViewById(id);
+      if (btnChangeToMay == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToNovember;
+      AppCompatButton btnChangeToNovember = rootView.findViewById(id);
+      if (btnChangeToNovember == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToOctober;
+      AppCompatButton btnChangeToOctober = rootView.findViewById(id);
+      if (btnChangeToOctober == null) {
+        break missingId;
+      }
+
+      id = R.id.btn_changeToSeptember;
+      AppCompatButton btnChangeToSeptember = rootView.findViewById(id);
+      if (btnChangeToSeptember == null) {
+        break missingId;
+      }
+
+      return new ActivityChangeMonthBinding((LinearLayout) rootView, btnChangeToApril,
+          btnChangeToAugust, btnChangeToDecember, btnChangeToFebruary, btnChangeToJanuary,
+          btnChangeToJuly, btnChangeToJune, btnChangeToMarch, btnChangeToMay, btnChangeToNovember,
+          btnChangeToOctober, btnChangeToSeptember);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

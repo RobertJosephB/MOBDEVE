@@ -4,8 +4,8 @@ package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.RadioButton;
-import android.widget.RadioGroup;
+import android.widget.LinearLayout;
+import android.widget.TextView;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.viewbinding.ViewBinding;
@@ -16,19 +16,19 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.R;
 
 public final class ItemChangeMonthBinding implements ViewBinding {
   @NonNull
-  private final RadioGroup rootView;
+  private final LinearLayout rootView;
 
   @NonNull
-  public final RadioButton rbMonthOption;
+  public final TextView btnChangeMonth;
 
-  private ItemChangeMonthBinding(@NonNull RadioGroup rootView, @NonNull RadioButton rbMonthOption) {
+  private ItemChangeMonthBinding(@NonNull LinearLayout rootView, @NonNull TextView btnChangeMonth) {
     this.rootView = rootView;
-    this.rbMonthOption = rbMonthOption;
+    this.btnChangeMonth = btnChangeMonth;
   }
 
   @Override
   @NonNull
-  public RadioGroup getRoot() {
+  public LinearLayout getRoot() {
     return rootView;
   }
 
@@ -53,13 +53,13 @@ public final class ItemChangeMonthBinding implements ViewBinding {
     // This is done to optimize the compiled bytecode for size and performance.
     int id;
     missingId: {
-      id = R.id.rb_monthOption;
-      RadioButton rbMonthOption = rootView.findViewById(id);
-      if (rbMonthOption == null) {
+      id = R.id.btn_changeMonth;
+      TextView btnChangeMonth = rootView.findViewById(id);
+      if (btnChangeMonth == null) {
         break missingId;
       }
 
-      return new ItemChangeMonthBinding((RadioGroup) rootView, rbMonthOption);
+      return new ItemChangeMonthBinding((LinearLayout) rootView, btnChangeMonth);
     }
     String missingId = rootView.getResources().getResourceName(id);
     throw new NullPointerException("Missing required view with ID: ".concat(missingId));

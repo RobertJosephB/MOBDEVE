@@ -18,13 +18,14 @@ ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/SignUp.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySignUp2Binding.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySignUp2Binding
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/ChangeMonthAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter$ChangeMonthViewHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityLogInBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogInBinding
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/SignUp2.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2$1
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityLogInBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogInBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/LogIn.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/MonthModel.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.MonthModel
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/EventModel.java
@@ -37,13 +38,12 @@ ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityWelcomeBindin
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityWelcomeBinding
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_DaySpecific.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_Main.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/BuildConfig.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.BuildConfig
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ItemChangeMonthBinding.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ItemChangeMonthBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventsMainAdapter.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter$EventsMainViewHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/LogIn.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventAdapter.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter$EventViewHolder
@@ -56,11 +56,10 @@ ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/YearModel.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.YearModel
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/EventSmallBinding.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.EventSmallBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/BuildConfig.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.BuildConfig
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/ChangeMonthAdapter.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter$ChangeMonthViewHolder
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter$ChangeMonthViewHolder$1
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventsMainAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter$EventsMainViewHolder
 ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/ChangeMonth.java
  ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth
+ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_Main.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main

@@ -1966,6 +1966,19 @@ int id bounce 0x7f090062
 int id bounceBoth 0x7f090063
 int id bounceEnd 0x7f090064
 int id bounceStart 0x7f090065
+int id btn_changeMonth 0x7f0901ff
+int id btn_changeToApril 0x7f0901f3
+int id btn_changeToAugust 0x7f0901f4
+int id btn_changeToDecember 0x7f0901f5
+int id btn_changeToFebruary 0x7f0901f6
+int id btn_changeToJanuary 0x7f0901f7
+int id btn_changeToJuly 0x7f0901f8
+int id btn_changeToJune 0x7f0901f9
+int id btn_changeToMarch 0x7f0901fa
+int id btn_changeToMay 0x7f0901fb
+int id btn_changeToNovember 0x7f0901fc
+int id btn_changeToOctober 0x7f0901fd
+int id btn_changeToSeptember 0x7f0901fe
 int id btn_finishSignUp 0x7f090066
 int id btn_goToSignUp 0x7f090067
 int id btn_goToSignUp2 0x7f090068
@@ -2209,7 +2222,6 @@ int id progress_circular 0x7f090155
 int id progress_horizontal 0x7f090156
 int id radio 0x7f090157
 int id ratio 0x7f090158
-int id rb_monthOption 0x7f090159
 int id rectangles 0x7f09015a
 int id reverseSawtooth 0x7f09015b
 int id right 0x7f09015c
@@ -2218,7 +2230,6 @@ int id right_icon 0x7f09015e
 int id right_side 0x7f09015f
 int id rounded 0x7f090160
 int id row_index_key 0x7f090161
-int id rv_changeMonthList 0x7f090162
 int id rv_eventMain_list 0x7f090163
 int id rv_event_list 0x7f090164
 int id save_non_transition_alpha 0x7f090165

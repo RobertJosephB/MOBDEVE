@@ -9,10 +9,12 @@ import android.widget.Toast;
 import com.google.android.material.snackbar.Snackbar;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogInBinding;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.util.StoragePreferences;
 
 public class LogIn extends AppCompatActivity {
 
     private ActivityLogInBinding binding;
+    private StoragePreferences storagePreferences;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

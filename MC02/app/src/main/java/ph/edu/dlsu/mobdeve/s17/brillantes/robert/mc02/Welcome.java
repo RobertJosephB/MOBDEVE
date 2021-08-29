@@ -7,6 +7,7 @@ import android.os.Bundle;
 import android.os.CountDownTimer;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityWelcomeBinding;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.util.StoragePreferences;
 
 public class Welcome extends AppCompatActivity {
 

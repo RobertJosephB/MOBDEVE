@@ -52,7 +52,7 @@ public class Events_Main extends AppCompatActivity {
 
         int i;
 
-        for (i = 0; i < calendar.getYears().size(); i++) {
+        for (i = 0; i < calendar.getYears().size() && currentYearIndex == -1; i++) {
             if (calendar.getYears().get(i).getYearNum().equals(dNowYear))
                 currentYearIndex = i;
         }
@@ -62,12 +62,13 @@ public class Events_Main extends AppCompatActivity {
 
         ArrayList<MonthModel> tempCurrentYear = calendar.getYears().get(currentYearIndex).getMonths();
 
-        for (i = 0; i < tempCurrentYear.size(); i++) {
+        for (i = 0; i < tempCurrentYear.size() && currentMonthIndex == -1; i++) {
             if (tempCurrentYear.get(i).getMonthNum().equals(dNowMonth))
                 currentMonthIndex = i;
         }
 
         this.currentMonth = tempCurrentYear.get(currentMonthIndex).getMonthName();
+        this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
 
         switch (this.currentMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -81,12 +82,12 @@ public class Events_Main extends AppCompatActivity {
             case "December":    displayedMonth = "DEC.";    break;
         }
 
-        this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
-
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentYear.setText(displayedYear);
 
+        this.storagePreferences.saveStringPreferences("oldCurrentMonth", this.currentMonth);
         this.storagePreferences.saveStringPreferences("currentMonth", this.currentMonth);
+        this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
         eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays);
@@ -107,7 +108,53 @@ public class Events_Main extends AppCompatActivity {
         Log.i(LOG_TAG, "onResume()");
         super.onResume();
 
+        if (!this.storagePreferences.getStringPreferences("oldCurrentMonth").equals(this.storagePreferences.getStringPreferences("currentMonth"))
+            || !this.storagePreferences.getStringPreferences("oldCurrentYear").equals(this.storagePreferences.getStringPreferences("currentYear"))) {
 
+            String displayedMonth = this.storagePreferences.getStringPreferences("currentMonth");
+
+            switch (displayedMonth) {
+                case "January":     displayedMonth = "JAN.";    break;
+                case "February":    displayedMonth = "FEB.";    break;
+                case "March":       displayedMonth = "MAR.";    break;
+                case "April":       displayedMonth = "APR.";    break;
+                case "May":         displayedMonth = "MAY";     break;
+                case "June":        displayedMonth = "JUNE";    break;
+                case "July":        displayedMonth = "JULY";    break;
+                case "August":      displayedMonth = "AUG.";    break;
+                case "September":   displayedMonth = "SEPT.";   break;
+                case "October":     displayedMonth = "OCT.";    break;
+                case "November":    displayedMonth = "NOV.";    break;
+                case "December":    displayedMonth = "DEC.";    break;
+            }
+
+            binding.tvCurrentMonth.setText(displayedMonth);
+            binding.tvCurrentYear.setText(this.storagePreferences.getStringPreferences("currentYear"));
+
+            int i;
+            int currentYearIndex = -1;
+            int currentMonthIndex = -1;
+
+            for (i = 0; i < calendar.getYears().size() && currentYearIndex == -1; i++) {
+                if (calendar.getYears().get(i).getYearNum().equals(this.storagePreferences.getStringPreferences("currentYear")))
+                    currentYearIndex = i;
+            }
+
+            this.currentYear = calendar.getYears().get(currentYearIndex).getYearNum();
+
+            ArrayList<MonthModel> tempCurrentYear = calendar.getYears().get(currentYearIndex).getMonths();
+
+            for (i = 0; i < tempCurrentYear.size() && currentMonthIndex == -1; i++) {
+                if (tempCurrentYear.get(i).getMonthName().equals(this.storagePreferences.getStringPreferences("currentMonth")))
+                    currentMonthIndex = i;
+            }
+
+            this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
+            this.storagePreferences.saveStringPreferences("oldCurrentMonth", this.storagePreferences.getStringPreferences("currentMonth"));
+            this.storagePreferences.saveStringPreferences("oldCurrentYear", this.storagePreferences.getStringPreferences("currentYear"));
+
+            this.eventsMainAdapter.updateList(this.currentMonthDays);
+        }
     }
 
     @Override

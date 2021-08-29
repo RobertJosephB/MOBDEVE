@@ -30,6 +30,11 @@ public class EventsMainAdapter
         this.currentMonthDays = currentMonthDays;
     }
 
+    public void updateList (ArrayList<DayModel> newMonthDays) {
+        this.currentMonthDays = newMonthDays;
+        notifyDataSetChanged();
+    }
+
     @Override
     public int getItemCount() {
         return this.currentMonthDays.size();
