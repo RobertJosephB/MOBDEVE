@@ -6,12 +6,17 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.widget.Toast;
+
+import com.google.android.material.snackbar.Snackbar;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
 import java.util.Date;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEventsMainBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.CalendarModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.DayModel;
@@ -36,6 +41,7 @@ public class Events_Main extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityEventsMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        EventDAO eventDAO = new EventDAOSQLImpl(getApplicationContext());
 
         this.calendar = new CalendarModel();
         this.storagePreferences = new StoragePreferences(this);
@@ -49,6 +55,7 @@ public class Events_Main extends AppCompatActivity {
         int currentYearIndex = -1;
         String displayedMonth = "";
         String displayedYear = "";
+
 
         int i;
 
@@ -69,6 +76,10 @@ public class Events_Main extends AppCompatActivity {
 
         this.currentMonth = tempCurrentYear.get(currentMonthIndex).getMonthName();
         this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
+
+        for(i = 0; i < this.currentMonthDays.size();i++){
+            this.currentMonthDays.get(i).setEvents(eventDAO.getMonthEvents(this.currentMonthDays.get(i).getMonthName()));
+        }
 
         switch (this.currentMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -162,4 +173,75 @@ public class Events_Main extends AppCompatActivity {
         Log.i(LOG_TAG, "onPause()");
         super.onPause();
     }
+
+    /*private void init(){
+
+
+        binding.saveRecord.setOnClickListener(view->{
+            User user = new User();
+            user.setId(Integer.parseInt(binding.uId.getText().toString()));
+            user.setName(binding.uName.getText().toString());
+            user.setEmail(binding.uEmail.getText().toString());
+            userDAO.addUser(user);
+            userAdapter.addUsers(userDAO.getUsers());
+
+        });
+
+        binding.viewRecord.setOnClickListener(view ->{
+            int userId = 0;
+            try
+            {
+                userId = Integer.parseInt(binding.uId.getText().toString());
+            }
+            catch (NumberFormatException e){
+                Snackbar.make(binding.getRoot(),"Empty FIeld", Snackbar.LENGTH_SHORT).show();
+            }
+
+            User user = userDAO.getUser(userId);
+            if(user!=null){
+                binding.uName.setText(user.getName());
+                binding.uEmail.setText(user.getEmail());
+            }else{
+                binding.uName.setText("");
+                binding.uEmail.setText("");
+                Toast.makeText(getApplicationContext(),
+                        "User not found",
+                        Toast.LENGTH_SHORT).show();
+
+                Snackbar.make(binding.getRoot(),"User Not Found", Snackbar.LENGTH_SHORT).show();
+            }
+        });
+        binding.updateRecord.setOnClickListener(view->{
+            User user = new User();
+            try{
+                user.setId(Integer.parseInt(binding.uId.getText().toString()));
+                user.setName(binding.uName.getText().toString());
+                user.setEmail(binding.uEmail.getText().toString());
+
+            }
+            catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(),"Empty Field", Toast.LENGTH_SHORT).show();
+            }
+            int status = userDAO.updateUser(user);
+            if(status > 0){
+                userAdapter.addUsers(userDAO.getUsers());
+            }else{
+                Toast.makeText(getApplicationContext(),"User Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+        binding.deleteRecord.setOnClickListener(view->{
+            int status = 0;
+            try{
+                status = userDAO.deleteUser(Integer.parseInt(binding.uId.getText().toString()));
+            }catch (NumberFormatException e){
+                Toast.makeText(getApplicationContext(),"Empty Field", Toast.LENGTH_SHORT).show();
+            }
+            if(status > 0){
+                userAdapter.addUsers(userDAO.getUsers());
+            }else{
+                Toast.makeText(getApplicationContext(),"User Not Found", Toast.LENGTH_SHORT).show();
+            }
+        });
+
+    }*/
 }

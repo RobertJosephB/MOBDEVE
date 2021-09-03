@@ -4,8 +4,10 @@ import java.io.Serializable;
 
 public class EventModel implements Serializable {
 
+    private int eventId = -1;
     private String dayNumber;
     private String monthName;
+    private String yearNumber;
     private String eventTitle;
     private String time;
     private String details;
@@ -21,6 +23,14 @@ public class EventModel implements Serializable {
         this.notificationType = notificationType;
         this.notificationTime = notificationTime;
     }
+    public EventModel(){
+    }
+    public int getEventId() {
+        return eventId;
+    }
+    public void setEventId(int id) {
+        this.eventId = id;
+    }
 
     public String getDayNumber() { return dayNumber; }
 
@@ -29,6 +39,14 @@ public class EventModel implements Serializable {
     public String getMonthName() { return monthName; }
 
     public void setMonthName(String monthName) { this.monthName = monthName; }
+
+    public void setYearNumber(String yearNumber) {
+        this.yearNumber = yearNumber;
+    }
+
+    public String getYearNumber() {
+        return yearNumber;
+    }
 
     public String getEventTitle() {
         return eventTitle;

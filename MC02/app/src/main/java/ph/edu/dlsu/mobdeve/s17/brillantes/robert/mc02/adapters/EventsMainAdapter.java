@@ -25,9 +25,11 @@ public class EventsMainAdapter
     private Context context;
     private ArrayList<DayModel> currentMonthDays;
 
+
     public EventsMainAdapter(Context context, ArrayList<DayModel> currentMonthDays) {
         this.context = context;
         this.currentMonthDays = currentMonthDays;
+
     }
 
     public void updateList (ArrayList<DayModel> newMonthDays) {
