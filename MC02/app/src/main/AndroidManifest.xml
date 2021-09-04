@@ -22,6 +22,9 @@
         <activity android:name=".SignUp2" />
         <activity android:name=".Events_Main" />
         <activity android:name=".Events_DaySpecific" />
+        <activity android:name=".EditEvent" />
+        <activity android:name=".AddEvent" />
+        <activity android:name=".SingleEvent"/>
     </application>
 
 </manifest>

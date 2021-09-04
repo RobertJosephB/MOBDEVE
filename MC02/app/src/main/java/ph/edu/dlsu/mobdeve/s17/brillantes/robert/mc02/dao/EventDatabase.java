@@ -5,7 +5,7 @@ import android.database.sqlite.SQLiteDatabase;
 import android.database.sqlite.SQLiteOpenHelper;
 
 public class EventDatabase extends SQLiteOpenHelper {
-    private static final String DATABASE_NAME = "user.db";
+    private static final String DATABASE_NAME = "event.db";
     private static final int DATABASE_VERSION = 1;
 
     public static final String TABLE_EVENTS = "events";

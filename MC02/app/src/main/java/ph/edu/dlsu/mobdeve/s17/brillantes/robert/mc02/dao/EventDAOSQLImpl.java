@@ -73,7 +73,7 @@ public class EventDAOSQLImpl implements EventDAO{
         cursor.moveToFirst();
 
         while(!cursor.isAfterLast()){
-            EventModel temp = new EventModel();
+            EventModel temp = new EventModel("","","","","","");
             temp.setEventId(cursor.getInt(0));
             temp.setEventTitle(cursor.getString(1));
             temp.setDayNumber(cursor.getString(2));
@@ -95,7 +95,7 @@ public class EventDAOSQLImpl implements EventDAO{
         }
         return result;
     }
-    public ArrayList<EventModel> getMonthEvents(String month) {
+    public ArrayList<EventModel> getDayEvents(String month,String year, String day) {
         ArrayList<EventModel> result = new ArrayList<>();
         String[] columns = {EventDatabase.EVENT_ID,
                 EventDatabase.EVENT_TITLE,
@@ -120,7 +120,7 @@ public class EventDAOSQLImpl implements EventDAO{
         cursor.moveToFirst();
 
         while(!cursor.isAfterLast()){
-            EventModel temp = new EventModel();
+            EventModel temp = new EventModel("","","","","","");
             temp.setEventId(cursor.getInt(0));
             temp.setEventTitle(cursor.getString(1));
             temp.setDayNumber(cursor.getString(2));
@@ -131,7 +131,7 @@ public class EventDAOSQLImpl implements EventDAO{
             temp.setNotificationType(cursor.getString(7));
             temp.setNotificationTime(cursor.getString(8));
 
-            if(temp.getMonthName().equals(month))
+            if(temp.getMonthName().equals(month) && temp.getDayNumber().equals(day) && temp.getYearNumber().equals(year))
                 result.add(temp);
 
             cursor.moveToNext();
@@ -160,16 +160,18 @@ public class EventDAOSQLImpl implements EventDAO{
             cursor.moveToFirst();
 
             while(!cursor.isAfterLast()){
-                event = new EventModel();
-                event.setEventId(cursor.getInt(cursor.getColumnIndex(EventDatabase.EVENT_ID)));
-                event.setEventTitle(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_TITLE)));
-                event.setDayNumber(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_DAY)));
-                event.setMonthName(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_MONTH)));
-                event.setYearNumber(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_YEAR)));
-                event.setTime(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_TIME)));
-                event.setDetails(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_DETAILS)));
-                event.setNotificationType(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_NOTIFICATION_TYPE)));
-                event.setNotificationTime(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_NOTIFICATION_TIME)));
+                EventModel temp = new EventModel("","","","","","");
+                temp.setEventId(cursor.getInt(cursor.getColumnIndex(EventDatabase.EVENT_ID)));
+                temp.setEventTitle(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_TITLE)));
+                temp.setDayNumber(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_DAY)));
+                temp.setMonthName(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_MONTH)));
+                temp.setYearNumber(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_YEAR)));
+                temp.setTime(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_TIME)));
+                temp.setDetails(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_DETAILS)));
+                temp.setNotificationType(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_NOTIFICATION_TYPE)));
+                temp.setNotificationTime(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_NOTIFICATION_TIME)));
+                if(temp.getEventId()==eventID)
+                    event = temp;
                 cursor.moveToNext();
             }
         }

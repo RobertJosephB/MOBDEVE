@@ -7,6 +7,7 @@ public class DayModel implements Serializable {
 
     private String                  dayNum;
     private String                  monthName;
+    private String                  yearNum;
     private ArrayList<EventModel>   events;
 
     public DayModel(int num, String monthName) {
@@ -16,9 +17,8 @@ public class DayModel implements Serializable {
         this.events.add(new EventModel(
                 this.dayNum,
                 this.monthName,
+                this.yearNum,
                 "No events",
-                "",
-                "",
                 "",
                 ""
         ));
@@ -42,5 +42,13 @@ public class DayModel implements Serializable {
 
     public void setEvents(ArrayList<EventModel> events) {
         this.events = events;
+    }
+
+    public String getYearNum() {
+        return yearNum;
+    }
+
+    public void setYearNum(String yearNum) {
+        this.yearNum = yearNum;
     }
 }

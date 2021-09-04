@@ -6,6 +6,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import android.content.Intent;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.View;
 import android.widget.Toast;
 
 import com.google.android.material.snackbar.Snackbar;
@@ -33,6 +34,7 @@ public class Events_Main extends AppCompatActivity {
     private String currentYear;
     private StoragePreferences storagePreferences;
     private String LOG_TAG = "Events_Main";
+    private EventsMainAdapter.ViewClickListener listener;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -77,9 +79,7 @@ public class Events_Main extends AppCompatActivity {
         this.currentMonth = tempCurrentYear.get(currentMonthIndex).getMonthName();
         this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
 
-        for(i = 0; i < this.currentMonthDays.size();i++){
-            this.currentMonthDays.get(i).setEvents(eventDAO.getMonthEvents(this.currentMonthDays.get(i).getMonthName()));
-        }
+
 
         switch (this.currentMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -101,7 +101,9 @@ public class Events_Main extends AppCompatActivity {
         this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
-        eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays);
+        setOnClickListener();
+
+        eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays,listener);
         binding.rvEventMainList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventMainList.setAdapter(eventsMainAdapter);
 
@@ -112,6 +114,19 @@ public class Events_Main extends AppCompatActivity {
 
             startActivity(changeMonth);
         });
+    }
+
+    private void setOnClickListener() {
+        listener = new EventsMainAdapter.ViewClickListener() {
+            @Override
+            public void onClick(View v, int position) {
+                Intent intent = new Intent(Events_Main.this,Events_DaySpecific.class);
+                intent.putExtra("monthname",currentMonth);
+                intent.putExtra("day",""+(position+1));
+                intent.putExtra("year",currentYear);
+                startActivity(intent);
+            }
+        };
     }
 
     @Override
