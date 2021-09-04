@@ -1,21 +1,21 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
-import androidx.annotation.NonNull;
 import androidx.core.content.ContextCompat;
 import androidx.recyclerview.widget.RecyclerView;
 
-import org.w3c.dom.Text;
-
-import java.lang.reflect.Array;
 import java.util.ArrayList;
 
+
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.R;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAO;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.DayModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 
@@ -25,10 +25,16 @@ public class EventsMainAdapter
     private Context context;
     private ArrayList<DayModel> currentMonthDays;
 
+    private ArrayList<EventModel> data = new ArrayList<>();
+    private ViewClickListener listener;
 
-    public EventsMainAdapter(Context context, ArrayList<DayModel> currentMonthDays) {
+
+
+
+    public EventsMainAdapter(Context context, ArrayList<DayModel> currentMonthDays,ViewClickListener listener) {
         this.context = context;
         this.currentMonthDays = currentMonthDays;
+        this.listener = listener;
 
     }
 
@@ -40,6 +46,10 @@ public class EventsMainAdapter
     @Override
     public int getItemCount() {
         return this.currentMonthDays.size();
+    }
+
+    public interface ViewClickListener{
+        void onClick(View v,int position);
     }
 
     @Override
@@ -56,6 +66,8 @@ public class EventsMainAdapter
         holder.tv_dayNumber.setText(this.currentMonthDays.get(position).getDayNumber());
         holder.tv_monthName.setText(this.currentMonthDays.get(position).getMonthName());
 
+
+
         if (this.currentMonthDays.get(position).getEvents().size() == 1
             && this.currentMonthDays.get(position).getEvents().get(0).getEventTitle().equals("No events")) {
             holder.tv_eventTitle.setText("-- No events --");
@@ -71,16 +83,26 @@ public class EventsMainAdapter
         }
     }
 
-    protected class EventsMainViewHolder extends RecyclerView.ViewHolder {
+    protected class EventsMainViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener{
         TextView tv_dayNumber;
         TextView tv_monthName;
         TextView tv_eventTitle;
+        LinearLayout ll_clickable;
 
         public EventsMainViewHolder(View view) {
             super(view);
             tv_dayNumber = view.findViewById(R.id.tv_dayNumber);
             tv_monthName = view.findViewById(R.id.tv_monthName);
             tv_eventTitle = view.findViewById(R.id.tv_eventTitle);
+            ll_clickable = view.findViewById(R.id.ll_eventClickable);
+            view.setOnClickListener(this);
+        }
+
+        @Override
+        public void onClick(View v) {
+            listener.onClick(v,getAdapterPosition());
+
         }
     }
+
 }

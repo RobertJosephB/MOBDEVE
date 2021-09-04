@@ -14,17 +14,17 @@ public class EventModel implements Serializable {
     private String notificationType;
     private String notificationTime;
 
-    public EventModel(String dayNumber, String monthName, String eventTitle, String time, String details, String notificationType, String notificationTime) {
+    public EventModel(String dayNumber, String monthName, String yearNumber, String eventTitle, String time, String details) {
         this.dayNumber = dayNumber;
         this.monthName = monthName;
         this.eventTitle = eventTitle;
+        this.yearNumber = yearNumber;
         this.time = time;
         this.details = details;
         this.notificationType = notificationType;
         this.notificationTime = notificationTime;
     }
-    public EventModel(){
-    }
+
     public int getEventId() {
         return eventId;
     }

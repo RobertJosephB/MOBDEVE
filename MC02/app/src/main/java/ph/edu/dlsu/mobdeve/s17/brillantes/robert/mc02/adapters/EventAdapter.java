@@ -1,6 +1,7 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,7 +13,11 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
+
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.R;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SingleEvent;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 
 public class EventAdapter
@@ -20,10 +25,17 @@ public class EventAdapter
 
     private Context context;
     private ArrayList<EventModel> eventList;
+    EventDAO eventDAO;
 
     public EventAdapter(Context context, ArrayList<EventModel> eventList) {
+
         this.context = context;
         this.eventList = eventList;
+        eventDAO = new EventDAOSQLImpl(context);
+    }
+    public void updateList (ArrayList<EventModel> newEvents) {
+        this.eventList = newEvents;
+        notifyDataSetChanged();
     }
 
     @Override
@@ -47,12 +59,27 @@ public class EventAdapter
         holder.tv_eventTitle.setText(eventList.get(position).getEventTitle());
         holder.tv_time.setText(eventList.get(position).getTime());
 
+
         holder.ll_eventClickable.setOnClickListener( v -> {
-            Toast.makeText(context, "Specific Event Opened.", Toast.LENGTH_SHORT).show();
+            Intent singleEvent = new Intent(context, SingleEvent.class);
+
+            singleEvent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
+            singleEvent.putExtra("title",eventList.get(position).getEventTitle());
+            singleEvent.putExtra("monthname",eventList.get(position).getMonthName());
+            singleEvent.putExtra("day",eventList.get(position).getDayNumber());
+            singleEvent.putExtra("time",eventList.get(position).getTime());
+            singleEvent.putExtra("details",eventList.get(position).getDetails());
+            singleEvent.putExtra("alarm",eventList.get(position).getNotificationType());
+            singleEvent.putExtra("id",eventList.get(position).getEventId());
+            context.startActivity(singleEvent);
         });
 
         holder.tv_delete.setOnClickListener( v -> {
             Toast.makeText(context, "Delete attempted.", Toast.LENGTH_SHORT).show();
+            eventDAO.deleteEvent(eventList.get(position).getEventId());
+
+            eventList.remove(position);
+            notifyDataSetChanged();
         });
     }
 
@@ -64,6 +91,7 @@ public class EventAdapter
         TextView tv_delete;
         LinearLayout ll_eventClickable;
 
+
         public EventViewHolder(View view) {
             super(view);
             tv_dayNumber = view.findViewById(R.id.tv_dayNumber);
@@ -73,5 +101,7 @@ public class EventAdapter
             tv_delete = view.findViewById(R.id.tv_delete);
             ll_eventClickable = view.findViewById(R.id.ll_eventClickable);
         }
+
     }
+
 }
