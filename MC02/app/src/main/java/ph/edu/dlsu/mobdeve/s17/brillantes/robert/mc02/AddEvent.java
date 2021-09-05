@@ -20,7 +20,7 @@ public class AddEvent extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EditText tvTitle, tvTime, tvDetails, tvAlarm, tvSendTo;
+        EditText etTitle, etTime, etDetails, etAlarm, etSendTo;
 
         super.onCreate(savedInstanceState);
         binding = ActivityEditEventBinding.inflate(getLayoutInflater());
@@ -47,19 +47,19 @@ public class AddEvent extends AppCompatActivity {
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentMonthSmall.setText(displayedMonth);
         binding.tvCurrentDay.setText(day);
-        tvTitle = binding.tvEditEventTitle;
-        tvTime = binding.tvEditEventTime;
-        tvDetails = binding.tvEditEventDetails;
-        tvAlarm = binding.tvEditEventAlarm;
-        tvSendTo = binding.tvSendingTo;
+        etTitle = binding.etEditEventTitle;
+        etTime = binding.etEditEventTime;
+        etDetails = binding.etEditEventDetails;
+        etAlarm = binding.etEditEventAlarm;
+        etSendTo = binding.etSendingTo;
 
         binding.fabAddEvent.setOnClickListener(v->{
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("title",tvTitle.getText().toString());
-            returnIntent.putExtra("time",tvTime.getText().toString());
-            returnIntent.putExtra("details",tvDetails.getText().toString());
-            returnIntent.putExtra("alarm",tvAlarm.getText().toString());
-            returnIntent.putExtra("sendto",tvSendTo.getText().toString());
+            returnIntent.putExtra("title",etTitle.getText().toString());
+            returnIntent.putExtra("time",etTime.getText().toString());
+            returnIntent.putExtra("details",etDetails.getText().toString());
+            returnIntent.putExtra("alarm",etAlarm.getText().toString());
+            returnIntent.putExtra("sendto",etSendTo.getText().toString());
             setResult(Activity.RESULT_OK,returnIntent);
             finish();
         });

@@ -19,7 +19,7 @@ public class EditEvent extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EditText tvTitle, tvTime, tvDetails, tvAlarm, tvSendTo;
+        EditText etTitle, etTime, etDetails, etAlarm, etSendTo;
 
         super.onCreate(savedInstanceState);
         binding = ActivityEditEventBinding.inflate(getLayoutInflater());
@@ -47,18 +47,22 @@ public class EditEvent extends AppCompatActivity {
         binding.tvCurrentMonthSmall.setText(displayedMonth);
         binding.tvCurrentDay.setText(day);
         binding.llSendingTo.setVisibility(LinearLayout.GONE);
-        tvTitle = binding.tvEditEventTitle;
-        tvTime = binding.tvEditEventTime;
-        tvDetails = binding.tvEditEventDetails;
-        tvAlarm = binding.tvEditEventAlarm;
-        tvSendTo = binding.tvSendingTo;
+        etTitle = binding.etEditEventTitle;
+        etTitle.setText(extras.getString("title"));
+        etTime = binding.etEditEventTime;
+        etTime.setText(extras.getString("time"));
+        etDetails = binding.etEditEventDetails;
+        etDetails.setText(extras.getString("details"));
+        etAlarm = binding.etEditEventAlarm;
+        etAlarm.setText(extras.getString("alarm"));
+        etSendTo = binding.etSendingTo;
 
         binding.fabAddEvent.setOnClickListener(v->{
             Intent returnIntent = new Intent();
-            returnIntent.putExtra("title",tvTitle.getText().toString());
-            returnIntent.putExtra("time",tvTime.getText().toString());
-            returnIntent.putExtra("details",tvDetails.getText().toString());
-            returnIntent.putExtra("alarm",tvAlarm.getText().toString());
+            returnIntent.putExtra("title",etTitle.getText().toString());
+            returnIntent.putExtra("time",etTime.getText().toString());
+            returnIntent.putExtra("details",etDetails.getText().toString());
+            returnIntent.putExtra("alarm",etAlarm.getText().toString());
             setResult(Activity.RESULT_OK,returnIntent);
             finish();
         });

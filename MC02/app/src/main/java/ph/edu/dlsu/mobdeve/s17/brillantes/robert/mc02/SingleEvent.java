@@ -108,6 +108,11 @@ public class SingleEvent extends AppCompatActivity {
             Intent addEvent = new Intent(SingleEvent.this, EditEvent.class);
             addEvent.putExtra("monthname",extras.getString("monthname"));
             addEvent.putExtra("day",day);
+            addEvent.putExtra("title",title);
+            addEvent.putExtra("time",time);
+            addEvent.putExtra("details",details);
+            addEvent.putExtra("alarm",alarm);
+
 
             activityResultLauncher.launch(addEvent);
 
