@@ -146,6 +146,57 @@ public class EventDAOSQLImpl implements EventDAO{
     }
 
     @Override
+    public ArrayList<EventModel> getMonthEvents(String month) {
+        ArrayList<EventModel> result = new ArrayList<>();
+        String[] columns = {EventDatabase.EVENT_ID,
+                EventDatabase.EVENT_TITLE,
+                EventDatabase.EVENT_DAY,
+                EventDatabase.EVENT_MONTH,
+                EventDatabase.EVENT_YEAR,
+                EventDatabase.EVENT_TIME,
+                EventDatabase.EVENT_DETAILS,
+                EventDatabase.EVENT_NOTIFICATION_TYPE,
+                EventDatabase.EVENT_NOTIFICATION_TIME};
+
+        database = eventdatabase.getReadableDatabase();
+
+
+        Cursor cursor = database.query(EventDatabase.TABLE_EVENTS,
+                columns,
+                null,
+                null,
+                null,
+                null,
+                null);
+        cursor.moveToFirst();
+
+        while(!cursor.isAfterLast()){
+            EventModel temp = new EventModel("","","","","","");
+            temp.setEventId(cursor.getInt(0));
+            temp.setEventTitle(cursor.getString(1));
+            temp.setDayNumber(cursor.getString(2));
+            temp.setMonthName(cursor.getString(3));
+            temp.setYearNumber(cursor.getString(4));
+            temp.setTime(cursor.getString(5));
+            temp.setDetails(cursor.getString(6));
+            temp.setNotificationType(cursor.getString(7));
+            temp.setNotificationTime(cursor.getString(8));
+
+            if(temp.getMonthName().equals(month))
+                result.add(temp);
+
+            cursor.moveToNext();
+        }
+        if(cursor!=null){
+            cursor.close();
+        }
+        if(database!=null){
+            eventdatabase.close();
+        }
+        return result;
+    }
+
+    @Override
     public EventModel getEvent(int eventID) {
         EventModel event = null;
 

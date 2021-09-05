@@ -5,6 +5,7 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
+import android.widget.LinearLayout;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -12,7 +13,7 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEditEv
 
 public class EditEvent extends AppCompatActivity {
     private ActivityEditEventBinding binding;
-    private String displayedMonth;
+    private String displayedMonth,day;
 
 
     @SuppressLint("SetTextI18n")
@@ -25,7 +26,7 @@ public class EditEvent extends AppCompatActivity {
         binding.tvModifyTitle.setText("Edit Event");
         Bundle extras = getIntent().getExtras();
         displayedMonth = extras.getString("monthname");
-
+        day = extras.getString("day");
 
         switch (displayedMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -43,6 +44,9 @@ public class EditEvent extends AppCompatActivity {
         }
         setContentView(binding.getRoot());
         binding.tvCurrentMonth.setText(displayedMonth);
+        binding.tvCurrentMonthSmall.setText(displayedMonth);
+        binding.tvCurrentDay.setText(day);
+        binding.llSendingTo.setVisibility(LinearLayout.GONE);
         tvTitle = binding.tvEditEventTitle;
         tvTime = binding.tvEditEventTime;
         tvDetails = binding.tvEditEventDetails;

@@ -283,11 +283,12 @@
     </LinearLayout>
     <com.google.android.material.floatingactionbutton.FloatingActionButton
         android:id="@+id/fab_add_event"
-        android:layout_width="50dp"
-        android:layout_height="50dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
         android:layout_marginTop="50dp"
         android:layout_gravity="right"
         android:layout_marginEnd="40dp"
-        android:backgroundTint="@color/event_blue"/>
+        android:backgroundTint="@color/event_blue"
+        android:src="@drawable/edit"/>
 
 </LinearLayout>
