@@ -154,6 +154,7 @@
             android:gravity="center"
             android:orientation="vertical">
             <TextView
+                android:id="@+id/tv_currentDay"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:textColor="@color/white"
@@ -161,6 +162,7 @@
                 android:fontFamily="@font/economicabold"
                 android:textSize="26sp"/>
             <TextView
+                android:id="@+id/tv_currentMonthSmall"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:textColor="@color/white"
@@ -319,11 +321,12 @@
         </LinearLayout>
         <com.google.android.material.floatingactionbutton.FloatingActionButton
             android:id="@+id/fab_add_event"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
             android:layout_gravity="right"
             android:layout_marginEnd="40dp"
-            android:backgroundTint="@color/event_blue"/>
+            android:backgroundTint="@color/event_blue"
+            android:src="@drawable/check"/>
 
 
 

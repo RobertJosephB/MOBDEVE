@@ -21,6 +21,7 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEventsMainBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.CalendarModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.DayModel;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.MonthModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.util.StoragePreferences;
 
@@ -35,15 +36,17 @@ public class Events_Main extends AppCompatActivity {
     private StoragePreferences storagePreferences;
     private String LOG_TAG = "Events_Main";
     private EventsMainAdapter.ViewClickListener listener;
+    private EventDAO eventDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
+        eventDAO  = new EventDAOSQLImpl(getApplicationContext());
         Log.i(LOG_TAG, "onCreate()");
 
         super.onCreate(savedInstanceState);
         binding = ActivityEventsMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        EventDAO eventDAO = new EventDAOSQLImpl(getApplicationContext());
+
 
         this.calendar = new CalendarModel();
         this.storagePreferences = new StoragePreferences(this);
@@ -101,6 +104,19 @@ public class Events_Main extends AppCompatActivity {
         this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
+        for(int j = 0; j < currentMonthDays.size(); j++){
+            ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
+
+
+            try{
+                temp.get(0).getMonthName();
+                currentMonthDays.get(j).setEvents(temp);
+            }catch(java.lang.IndexOutOfBoundsException e){
+
+            }
+
+
+        }
         setOnClickListener();
 
         eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays,listener);
@@ -131,6 +147,7 @@ public class Events_Main extends AppCompatActivity {
 
     @Override
     protected void onResume() {
+
         Log.i(LOG_TAG, "onResume()");
         super.onResume();
 
@@ -138,7 +155,7 @@ public class Events_Main extends AppCompatActivity {
             || !this.storagePreferences.getStringPreferences("oldCurrentYear").equals(this.storagePreferences.getStringPreferences("currentYear"))) {
 
             String displayedMonth = this.storagePreferences.getStringPreferences("currentMonth");
-
+            currentMonth = displayedMonth;
             switch (displayedMonth) {
                 case "January":     displayedMonth = "JAN.";    break;
                 case "February":    displayedMonth = "FEB.";    break;
@@ -156,6 +173,7 @@ public class Events_Main extends AppCompatActivity {
 
             binding.tvCurrentMonth.setText(displayedMonth);
             binding.tvCurrentYear.setText(this.storagePreferences.getStringPreferences("currentYear"));
+
 
             int i;
             int currentYearIndex = -1;
@@ -179,8 +197,44 @@ public class Events_Main extends AppCompatActivity {
             this.storagePreferences.saveStringPreferences("oldCurrentMonth", this.storagePreferences.getStringPreferences("currentMonth"));
             this.storagePreferences.saveStringPreferences("oldCurrentYear", this.storagePreferences.getStringPreferences("currentYear"));
 
+
+            for(int j = 0; j < currentMonthDays.size(); j++){
+
+
+
+                ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
+
+
+                try{
+                    temp.get(0).getMonthName();
+                    currentMonthDays.get(j).setEvents(temp);
+                }catch(java.lang.IndexOutOfBoundsException e){
+
+                }
+
+
+            }
+
             this.eventsMainAdapter.updateList(this.currentMonthDays);
         }
+        for(int j = 0; j < currentMonthDays.size(); j++){
+
+
+
+            ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
+
+
+            try{
+                temp.get(0).getMonthName();
+                currentMonthDays.get(j).setEvents(temp);
+            }catch(java.lang.IndexOutOfBoundsException e){
+
+            }
+
+
+        }
+
+        this.eventsMainAdapter.updateList(this.currentMonthDays);
     }
 
     @Override
@@ -189,74 +243,4 @@ public class Events_Main extends AppCompatActivity {
         super.onPause();
     }
 
-    /*private void init(){
-
-
-        binding.saveRecord.setOnClickListener(view->{
-            User user = new User();
-            user.setId(Integer.parseInt(binding.uId.getText().toString()));
-            user.setName(binding.uName.getText().toString());
-            user.setEmail(binding.uEmail.getText().toString());
-            userDAO.addUser(user);
-            userAdapter.addUsers(userDAO.getUsers());
-
-        });
-
-        binding.viewRecord.setOnClickListener(view ->{
-            int userId = 0;
-            try
-            {
-                userId = Integer.parseInt(binding.uId.getText().toString());
-            }
-            catch (NumberFormatException e){
-                Snackbar.make(binding.getRoot(),"Empty FIeld", Snackbar.LENGTH_SHORT).show();
-            }
-
-            User user = userDAO.getUser(userId);
-            if(user!=null){
-                binding.uName.setText(user.getName());
-                binding.uEmail.setText(user.getEmail());
-            }else{
-                binding.uName.setText("");
-                binding.uEmail.setText("");
-                Toast.makeText(getApplicationContext(),
-                        "User not found",
-                        Toast.LENGTH_SHORT).show();
-
-                Snackbar.make(binding.getRoot(),"User Not Found", Snackbar.LENGTH_SHORT).show();
-            }
-        });
-        binding.updateRecord.setOnClickListener(view->{
-            User user = new User();
-            try{
-                user.setId(Integer.parseInt(binding.uId.getText().toString()));
-                user.setName(binding.uName.getText().toString());
-                user.setEmail(binding.uEmail.getText().toString());
-
-            }
-            catch (NumberFormatException e){
-                Toast.makeText(getApplicationContext(),"Empty Field", Toast.LENGTH_SHORT).show();
-            }
-            int status = userDAO.updateUser(user);
-            if(status > 0){
-                userAdapter.addUsers(userDAO.getUsers());
-            }else{
-                Toast.makeText(getApplicationContext(),"User Not Found", Toast.LENGTH_SHORT).show();
-            }
-        });
-        binding.deleteRecord.setOnClickListener(view->{
-            int status = 0;
-            try{
-                status = userDAO.deleteUser(Integer.parseInt(binding.uId.getText().toString()));
-            }catch (NumberFormatException e){
-                Toast.makeText(getApplicationContext(),"Empty Field", Toast.LENGTH_SHORT).show();
-            }
-            if(status > 0){
-                userAdapter.addUsers(userDAO.getUsers());
-            }else{
-                Toast.makeText(getApplicationContext(),"User Not Found", Toast.LENGTH_SHORT).show();
-            }
-        });
-
-    }*/
 }

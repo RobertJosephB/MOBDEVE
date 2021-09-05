@@ -27,7 +27,7 @@ public class AddEvent extends AppCompatActivity {
         binding.tvModifyTitle.setText("Add Event");
         Bundle extras = getIntent().getExtras();
         displayedMonth = extras.getString("monthname");
-
+        day = extras.getString("day");
 
         switch (displayedMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -45,6 +45,8 @@ public class AddEvent extends AppCompatActivity {
         }
         setContentView(binding.getRoot());
         binding.tvCurrentMonth.setText(displayedMonth);
+        binding.tvCurrentMonthSmall.setText(displayedMonth);
+        binding.tvCurrentDay.setText(day);
         tvTitle = binding.tvEditEventTitle;
         tvTime = binding.tvEditEventTime;
         tvDetails = binding.tvEditEventDetails;

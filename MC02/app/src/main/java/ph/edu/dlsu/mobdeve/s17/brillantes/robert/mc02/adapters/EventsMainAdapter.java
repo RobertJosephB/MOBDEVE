@@ -16,6 +16,7 @@ import java.util.ArrayList;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.R;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.DayModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel;
 
@@ -35,6 +36,10 @@ public class EventsMainAdapter
         this.context = context;
         this.currentMonthDays = currentMonthDays;
         this.listener = listener;
+
+
+
+
 
     }
 
@@ -57,6 +62,7 @@ public class EventsMainAdapter
         View view = LayoutInflater.from(parent.getContext()).inflate(R.layout.item_event_main, parent, false);
 
         EventsMainViewHolder eventsMainViewHolder = new EventsMainViewHolder(view);
+
 
         return eventsMainViewHolder;
     }

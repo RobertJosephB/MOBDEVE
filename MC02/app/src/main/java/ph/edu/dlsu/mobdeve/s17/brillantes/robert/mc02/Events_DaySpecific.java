@@ -45,6 +45,7 @@ public class Events_DaySpecific extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         displayedMonth = extras.getString("monthname");
+        System.out.println(displayedMonth);
         year = extras.getString("year");
         day = extras.getString("day");
         Random rand = new Random();
@@ -88,9 +89,6 @@ public class Events_DaySpecific extends AppCompatActivity {
 
         binding.tvCurrentMonth.setText(shortMonth);
 
-        // dummy data
-         //init();
-
         eventAdapter = new EventAdapter(getApplicationContext(), eventList);
 
         binding.rvEventList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
@@ -100,6 +98,7 @@ public class Events_DaySpecific extends AppCompatActivity {
 
             Intent addEvent = new Intent(Events_DaySpecific.this, AddEvent.class);
             addEvent.putExtra("monthname",extras.getString("monthname"));
+            addEvent.putExtra("day",day);
             activityResultLauncher.launch(addEvent);
 
 
