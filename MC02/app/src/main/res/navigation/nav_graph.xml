@@ -7,7 +7,7 @@
 
     <fragment
         android:id="@+id/FirstFragment"
-        android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.FirstFragment"
+        android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.FirstFragment"
         android:label="@string/first_fragment_label"
         tools:layout="@layout/fragment_first">
 
@@ -17,7 +17,7 @@
     </fragment>
     <fragment
         android:id="@+id/SecondFragment"
-        android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SecondFragment"
+        android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SecondFragment"
         android:label="@string/second_fragment_label"
         tools:layout="@layout/fragment_second">
 
