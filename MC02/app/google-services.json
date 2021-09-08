@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "263582746779",
+    "project_id": "mco3-30f0b",
+    "storage_bucket": "mco3-30f0b.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:263582746779:android:c8e8ca47a4b8b8c55dde3e",
+        "android_client_info": {
+          "package_name": "ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "263582746779-t6m5341ov59u5bn63qfdeqk9on8tsooq.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBT4DPFhBCv09VkehZ8mMmxfEhQ97RRXFM"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "263582746779-t6m5341ov59u5bn63qfdeqk9on8tsooq.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
