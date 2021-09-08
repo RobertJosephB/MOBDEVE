@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".SignUp2"
+    android:background="@color/background_blue"
+    android:weightSum="2">
+
+    <LinearLayout
+        android:layout_width="0dp"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_margin="10dp"
+        android:gravity="center"
+        android:textColor="@color/black"
+        android:layout_weight="1">
+
+        <TextView
+            android:layout_margin="10dp"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="First Name:" />
+
+        <EditText
+            android:id="@+id/et_SU_firstName"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_styled"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:textColor="@color/black"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="30sp"
+            android:text="Last Name:" />
+
+        <EditText
+            android:id="@+id/et_SU_lastName"
+            android:layout_margin="10dp"
+            android:background="@drawable/edit_text_styled"
+            android:layout_width="200dp"
+            android:layout_height="40dp"
+            android:gravity="center" />
+
+        <TextView
+            android:layout_margin="10dp"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="Birthday:" />
+         <TextView
+             android:id="@+id/date_picker"
+            android:layout_margin="10dp"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/white"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textSize="25sp"
+            android:text="MM/DD/YYYY" />
+
+        <View
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:background="@android:color/white" />
+
+        <Button
+            android:id="@+id/btn_finishSignUp"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/black"
+            android:text="SIGN UP" />
+
+        <Button
+            android:id="@+id/btn_returnToLogIn"
+            android:layout_margin="10dp"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:backgroundTint="@color/white"
+            android:fontFamily="@font/economicabold"
+            android:textColor="@color/black"
+            android:text="BACK" />
+
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="Sign Up"
+        android:fontFamily="@font/economicabold"
+        android:textSize="35sp"
+        android:textColor="@color/white"
+        android:layout_gravity="center"
+        android:textAlignment="center"/>
+
+</LinearLayout>
