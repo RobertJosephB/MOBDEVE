@@ -13,30 +13,28 @@ import com.google.android.material.snackbar.Snackbar;
 
 import java.util.Calendar;
 
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySignUp2Binding;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.UserModel;
 
 public class SignUp2 extends AppCompatActivity {
 
     private ActivitySignUp2Binding binding;
     private TextView displayDate;
     private DatePickerDialog.OnDateSetListener dateSetListener;
+    private UserDAO userDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignUp2Binding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        displayDate.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-                Calendar cal = Calendar.getInstance();
-                int year = cal.get(Calendar.YEAR);
-                int month = cal.get(Calendar.MONTH);
-                int day = cal.get(Calendar.DAY_OF_MONTH);
-
-                DatePickerDialog dialog = new DatePickerDialog(SignUp2.this);
-            }
-        });
+        userDAO = new UserDAOFirebaseImpl(getApplicationContext());
+        UserModel temp = new UserModel();
+        temp.setUserEmail("email");
+        temp.setUserPassword("pass");
+        userDAO.addUser(temp);
 
         Bundle bundle = getIntent().getExtras();
 
@@ -62,6 +60,10 @@ public class SignUp2 extends AppCompatActivity {
 
                     @Override
                     public void onFinish() {
+                        UserModel temp = new UserModel();
+                        temp.setUserEmail(bundle.getString("email"));
+                        temp.setUserPassword(bundle.getString("password"));
+                        userDAO.addUser(temp);
                         startActivity(finishSignUp);
                         finish();
                     }

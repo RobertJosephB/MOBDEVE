@@ -2,6 +2,8 @@ package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -15,7 +17,8 @@ import java.util.Random;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventAdapter;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO;
-import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOSQLImpl;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl;
+
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsDayspecificBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
 
@@ -31,7 +34,7 @@ public class Events_DaySpecific extends AppCompatActivity {
     private String day;
 
     private EventDAO eventDAO;
-    private String newTitle,newTime, newDetails,newAlarm, newSendTo;
+    private String newTitle,newTime, newDetails,newAlarm, newSendTo,newType, newNotificationTime, userID;
     private String shortMonth;
 
 
@@ -40,14 +43,16 @@ public class Events_DaySpecific extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivityEventsDayspecificBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
-        eventDAO = new EventDAOSQLImpl(getApplicationContext());
+
 
         Bundle extras = getIntent().getExtras();
         displayedMonth = extras.getString("monthname");
-        System.out.println(displayedMonth);
+
         year = extras.getString("year");
         day = extras.getString("day");
+        userID = extras.getString("userID");
         Random rand = new Random();
+        eventDAO = new EventDAOFirebaseImpl(getApplicationContext(),userID);
         eventList = eventDAO.getDayEvents(displayedMonth,year,day);
         switch (displayedMonth) {
             case "January":     shortMonth = "JAN.";    break;
@@ -73,12 +78,17 @@ public class Events_DaySpecific extends AppCompatActivity {
                     newDetails = data.getString("details");
                     newAlarm = data.getString("alarm");
                     newSendTo = data.getString("sendto");
+                    newType = data.getString("type");
+                    newNotificationTime = data.getString("ntime");
 
-                    EventModel temp = new EventModel(day,displayedMonth,year,newTitle,newTime,newDetails);
+
+                    EventModel temp = new EventModel(day,displayedMonth,year,newTitle,newTime,newDetails,newType,newNotificationTime);
                     if(newTime.length() == 3)
                         temp.setTime("0"+newTime);
                     else
                         temp.setTime(newTime);
+                    System.out.println(userID);
+                    temp.setUserId(userID);
                     temp.setNotificationType(newAlarm);
                     temp.setEventId(rand.nextInt());
 
@@ -86,13 +96,26 @@ public class Events_DaySpecific extends AppCompatActivity {
                     eventList = eventDAO.getDayEvents(displayedMonth,year,day);
                     eventAdapter.updateList(eventList);
 
+                    Handler handler = new Handler();
+
+                    Runnable runnable = new Runnable() {
+                        @Override
+                        public void run() {
+                            eventAdapter.notifyDataSetChanged();
+
+                            handler.postDelayed(this, 2000);
+                        }
+                    };
+                    handler.postDelayed(runnable, 2000);
+
+
                 }
             }
         });
 
         binding.tvCurrentMonth.setText(shortMonth);
 
-        eventAdapter = new EventAdapter(getApplicationContext(), eventList);
+        eventAdapter = new EventAdapter(getApplicationContext(), eventList,userID);
 
         binding.rvEventList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventList.setAdapter(eventAdapter);
@@ -102,6 +125,7 @@ public class Events_DaySpecific extends AppCompatActivity {
             Intent addEvent = new Intent(Events_DaySpecific.this, AddEvent.class);
             addEvent.putExtra("monthname",extras.getString("monthname"));
             addEvent.putExtra("day",day);
+
             activityResultLauncher.launch(addEvent);
 
 
@@ -115,7 +139,20 @@ public class Events_DaySpecific extends AppCompatActivity {
     {
         super.onResume();
         eventList = eventDAO.getDayEvents(displayedMonth,year,day);
-        eventAdapter.updateList(eventList);
+        new CountDownTimer(3000, 1000) {
+
+            @Override
+            public void onTick(long millisUntilFinished) {
+
+            }
+
+            @Override
+            public void onFinish() {
+
+                eventAdapter.updateList(eventList);
+            }
+        }.start();
+
     }
 
 

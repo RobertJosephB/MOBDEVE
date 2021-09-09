@@ -9,7 +9,8 @@ public class EventDatabase extends SQLiteOpenHelper {
     private static final int DATABASE_VERSION = 1;
 
     public static final String TABLE_EVENTS = "events";
-    public static final String EVENT_ID = "id";
+    public static final String EVENT_ID = "event_id";
+    public static final String USER_ID = "user_id";
     public static final String EVENT_TITLE = "title";
     public static final String EVENT_DAY = "day";
     public static final String EVENT_MONTH = "month";
@@ -22,6 +23,7 @@ public class EventDatabase extends SQLiteOpenHelper {
     public static final String CREATE_EVENT_TABLE =
             "create table " + TABLE_EVENTS + " ( "
                     + EVENT_ID + " integer primary key, "
+                    + USER_ID + " text, "
                     + EVENT_TITLE +" text, "
                     + EVENT_DAY +" text, "
                     + EVENT_MONTH +" text, "

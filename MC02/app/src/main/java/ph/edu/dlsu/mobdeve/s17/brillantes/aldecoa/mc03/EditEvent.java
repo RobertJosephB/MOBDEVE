@@ -53,7 +53,7 @@ public class EditEvent extends AppCompatActivity {
         etTitle.setText(extras.getString("title"));
         etTimeHr = binding.etEditEventTimeHr;
         etTimeMin = binding.etEditEventTimeMin;
-        if(extras.getString("time")!=null) {
+        if(!extras.getString("time").equals("")) {
             etTimeHr.setText(extras.getString("time").substring(0, 2));
             etTimeMin.setText(extras.getString("time").substring(2, 4));
         }

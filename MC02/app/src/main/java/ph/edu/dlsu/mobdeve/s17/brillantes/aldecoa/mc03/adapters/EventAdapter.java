@@ -17,6 +17,7 @@ import java.util.ArrayList;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.R;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
 
@@ -27,11 +28,11 @@ public class EventAdapter
     private ArrayList<EventModel> eventList;
     EventDAO eventDAO;
 
-    public EventAdapter(Context context, ArrayList<EventModel> eventList) {
+    public EventAdapter(Context context, ArrayList<EventModel> eventList,String userID) {
 
         this.context = context;
         this.eventList = eventList;
-        eventDAO = new EventDAOSQLImpl(context);
+        eventDAO = new EventDAOFirebaseImpl(context,userID);
     }
     public void updateList (ArrayList<EventModel> newEvents) {
         this.eventList = newEvents;
@@ -71,6 +72,7 @@ public class EventAdapter
             singleEvent.putExtra("details",eventList.get(position).getDetails());
             singleEvent.putExtra("alarm",eventList.get(position).getNotificationType());
             singleEvent.putExtra("id",eventList.get(position).getEventId());
+            singleEvent.putExtra("userID",eventList.get(position).getUserId());
             context.startActivity(singleEvent);
         });
 
