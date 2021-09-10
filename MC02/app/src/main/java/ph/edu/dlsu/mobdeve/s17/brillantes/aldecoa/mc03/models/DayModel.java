@@ -20,7 +20,8 @@ public class DayModel implements Serializable {
                 this.yearNum,
                 "No events",
                 "",
-                ""
+                "",""
+                ,""
         ));
     }
 

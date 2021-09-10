@@ -13,8 +13,10 @@ public class EventModel implements Serializable {
     private String details;
     private String notificationType;
     private String notificationTime;
+    private String userId;
 
-    public EventModel(String dayNumber, String monthName, String yearNumber, String eventTitle, String time, String details) {
+
+    public EventModel(String dayNumber, String monthName, String yearNumber, String eventTitle, String time, String details, String notificationType, String notificationTime) {
         this.dayNumber = dayNumber;
         this.monthName = monthName;
         this.eventTitle = eventTitle;
@@ -23,6 +25,10 @@ public class EventModel implements Serializable {
         this.details = details;
         this.notificationType = notificationType;
         this.notificationTime = notificationTime;
+    }
+
+    public EventModel() {
+
     }
 
     public int getEventId() {
@@ -83,4 +89,12 @@ public class EventModel implements Serializable {
     }
 
     public void setNotificationTime(String notificationTime) { this.notificationTime = notificationTime; }
+
+    public void setUserId(String userId) {
+        this.userId = userId;
+    }
+
+    public String getUserId() {
+        return userId;
+    }
 }
