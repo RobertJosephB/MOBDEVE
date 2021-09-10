@@ -7,17 +7,21 @@ import android.os.Bundle;
 
 import com.google.android.material.snackbar.Snackbar;
 
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySignUpBinding;
 
 public class SignUp extends AppCompatActivity {
 
     private ActivitySignUpBinding binding;
 
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         binding = ActivitySignUpBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+
 
         binding.btnGoToSignUp2.setOnClickListener( v -> {
             Intent goToSignUp2 = new Intent(SignUp.this, SignUp2.class);

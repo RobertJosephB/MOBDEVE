@@ -3,6 +3,7 @@ package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 import android.annotation.SuppressLint;
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -12,6 +13,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOSQLImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySingleEventBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
@@ -36,9 +38,10 @@ public class SingleEvent extends AppCompatActivity {
         String time = extras.getString("time");
         String details = extras.getString("details");
         String alarm = extras.getString("alarm");
+        String userID = extras.getString("userID");
         int id = extras.getInt("id");
         binding.tvCurrentMonthSmall.setText(displayedMonth);
-        eventDAO = new EventDAOSQLImpl(getApplicationContext());
+        eventDAO = new EventDAOFirebaseImpl(getApplicationContext(),userID);
 
         switch (displayedMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -69,15 +72,25 @@ public class SingleEvent extends AppCompatActivity {
 
 
                     EventModel temp = eventDAO.getEvent(id);
+                    new CountDownTimer(1000, 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+                            temp.setEventTitle(newTitle);
+                            if(newTime.length() == 3)
+                                temp.setTime("0"+newTime);
+                            else
+                                temp.setTime(newTime);
+                            temp.setDetails(newDetails);
+                            temp.setNotificationType(newAlarm);
+                        }
+                    }.start();
 
 
-                    temp.setEventTitle(newTitle);
-                    if(newTime.length() == 3)
-                        temp.setTime("0"+newTime);
-                    else
-                        temp.setTime(newTime);
-                    temp.setDetails(newDetails);
-                    temp.setNotificationType(newAlarm);
 
 
 

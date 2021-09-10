@@ -73,16 +73,17 @@ public class EventDAOSQLImpl implements EventDAO{
         cursor.moveToFirst();
 
         while(!cursor.isAfterLast()){
-            EventModel temp = new EventModel("","","","","","");
+            EventModel temp = new EventModel("","","","","","","","");
             temp.setEventId(cursor.getInt(0));
-            temp.setEventTitle(cursor.getString(1));
-            temp.setDayNumber(cursor.getString(2));
-            temp.setMonthName(cursor.getString(3));
-            temp.setYearNumber(cursor.getString(4));
-            temp.setTime(cursor.getString(5));
-            temp.setDetails(cursor.getString(6));
-            temp.setNotificationType(cursor.getString(7));
-            temp.setNotificationTime(cursor.getString(8));
+            temp.setUserId(cursor.getString(1));
+            temp.setEventTitle(cursor.getString(2));
+            temp.setDayNumber(cursor.getString(3));
+            temp.setMonthName(cursor.getString(4));
+            temp.setYearNumber(cursor.getString(5));
+            temp.setTime(cursor.getString(6));
+            temp.setDetails(cursor.getString(7));
+            temp.setNotificationType(cursor.getString(8));
+            temp.setNotificationTime(cursor.getString(9));
 
             result.add(temp);
             cursor.moveToNext();
@@ -120,16 +121,17 @@ public class EventDAOSQLImpl implements EventDAO{
         cursor.moveToFirst();
 
         while(!cursor.isAfterLast()){
-            EventModel temp = new EventModel("","","","","","");
+            EventModel temp = new EventModel("","","","","","","","");
             temp.setEventId(cursor.getInt(0));
-            temp.setEventTitle(cursor.getString(1));
-            temp.setDayNumber(cursor.getString(2));
-            temp.setMonthName(cursor.getString(3));
-            temp.setYearNumber(cursor.getString(4));
-            temp.setTime(cursor.getString(5));
-            temp.setDetails(cursor.getString(6));
-            temp.setNotificationType(cursor.getString(7));
-            temp.setNotificationTime(cursor.getString(8));
+            temp.setUserId(cursor.getString(1));
+            temp.setEventTitle(cursor.getString(2));
+            temp.setDayNumber(cursor.getString(3));
+            temp.setMonthName(cursor.getString(4));
+            temp.setYearNumber(cursor.getString(5));
+            temp.setTime(cursor.getString(6));
+            temp.setDetails(cursor.getString(7));
+            temp.setNotificationType(cursor.getString(8));
+            temp.setNotificationTime(cursor.getString(9));
 
             if(temp.getMonthName().equals(month) && temp.getDayNumber().equals(day) && temp.getYearNumber().equals(year))
                 result.add(temp);
@@ -171,16 +173,17 @@ public class EventDAOSQLImpl implements EventDAO{
         cursor.moveToFirst();
 
         while(!cursor.isAfterLast()){
-            EventModel temp = new EventModel("","","","","","");
+            EventModel temp = new EventModel("","","","","","","","");
             temp.setEventId(cursor.getInt(0));
-            temp.setEventTitle(cursor.getString(1));
-            temp.setDayNumber(cursor.getString(2));
-            temp.setMonthName(cursor.getString(3));
-            temp.setYearNumber(cursor.getString(4));
-            temp.setTime(cursor.getString(5));
-            temp.setDetails(cursor.getString(6));
-            temp.setNotificationType(cursor.getString(7));
-            temp.setNotificationTime(cursor.getString(8));
+            temp.setUserId(cursor.getString(1));
+            temp.setEventTitle(cursor.getString(2));
+            temp.setDayNumber(cursor.getString(3));
+            temp.setMonthName(cursor.getString(4));
+            temp.setYearNumber(cursor.getString(5));
+            temp.setTime(cursor.getString(6));
+            temp.setDetails(cursor.getString(7));
+            temp.setNotificationType(cursor.getString(8));
+            temp.setNotificationTime(cursor.getString(9));
 
             if(temp.getMonthName().equals(month))
                 result.add(temp);
@@ -211,8 +214,9 @@ public class EventDAOSQLImpl implements EventDAO{
             cursor.moveToFirst();
 
             while(!cursor.isAfterLast()){
-                EventModel temp = new EventModel("","","","","","");
+                EventModel temp = new EventModel("","","","","","","","");
                 temp.setEventId(cursor.getInt(cursor.getColumnIndex(EventDatabase.EVENT_ID)));
+                temp.setUserId(cursor.getString(cursor.getColumnIndex(EventDatabase.USER_ID)));
                 temp.setEventTitle(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_TITLE)));
                 temp.setDayNumber(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_DAY)));
                 temp.setMonthName(cursor.getString(cursor.getColumnIndex(EventDatabase.EVENT_MONTH)));

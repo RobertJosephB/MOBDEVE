@@ -5,6 +5,8 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 
 import android.content.Intent;
 import android.os.Bundle;
+import android.os.CountDownTimer;
+import android.os.Handler;
 import android.util.Log;
 import android.view.View;
 
@@ -14,7 +16,7 @@ import java.util.Date;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventsMainAdapter;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO;
-import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOSQLImpl;
+import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsMainBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.CalendarModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.DayModel;
@@ -32,17 +34,23 @@ public class Events_Main extends AppCompatActivity {
     private String currentYear;
     private StoragePreferences storagePreferences;
     private String LOG_TAG = "Events_Main";
+    private String userID = "";
     private EventsMainAdapter.ViewClickListener listener;
     private EventDAO eventDAO;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        eventDAO  = new EventDAOSQLImpl(getApplicationContext());
+
         Log.i(LOG_TAG, "onCreate()");
+
 
         super.onCreate(savedInstanceState);
         binding = ActivityEventsMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
+        Bundle extras = getIntent().getExtras();
+        userID = extras.getString("userID");
+        eventDAO  = new EventDAOFirebaseImpl(getApplicationContext(),userID);
+
 
 
         this.calendar = new CalendarModel();
@@ -104,13 +112,24 @@ public class Events_Main extends AppCompatActivity {
         for(int j = 0; j < currentMonthDays.size(); j++){
             ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
 
+            int finalJ = j;
+            new CountDownTimer(2000, 1000) {
+                @Override
+                public void onTick(long millisUntilFinished) {
 
-            try{
-                temp.get(0).getMonthName();
-                currentMonthDays.get(j).setEvents(temp);
-            }catch(java.lang.IndexOutOfBoundsException e){
+                }
 
-            }
+                @Override
+                public void onFinish() {
+
+                    try {
+                        temp.get(0).getMonthName();
+                        currentMonthDays.get(finalJ).setEvents(temp);
+                    } catch (java.lang.IndexOutOfBoundsException e) {
+
+                    }
+                }
+            }.start();
 
 
         }
@@ -127,6 +146,20 @@ public class Events_Main extends AppCompatActivity {
 
             startActivity(changeMonth);
         });
+        Handler handler = new Handler();
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                eventsMainAdapter.updateList(currentMonthDays);
+
+                eventsMainAdapter.notifyDataSetChanged();
+
+                handler.postDelayed(this, 5000);
+            }
+        };
+        handler.postDelayed(runnable, 5000);
+
     }
 
     private void setOnClickListener() {
@@ -137,6 +170,7 @@ public class Events_Main extends AppCompatActivity {
                 intent.putExtra("monthname",currentMonth);
                 intent.putExtra("day",""+(position+1));
                 intent.putExtra("year",currentYear);
+                intent.putExtra("userID", userID);
                 startActivity(intent);
             }
         };
