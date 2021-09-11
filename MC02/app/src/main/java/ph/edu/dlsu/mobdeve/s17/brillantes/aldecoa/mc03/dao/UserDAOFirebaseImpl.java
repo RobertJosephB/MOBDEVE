@@ -86,6 +86,7 @@ public class UserDAOFirebaseImpl implements UserDAO {
     @Override
     public ArrayList<UserModel> getUsers() {
         ArrayList<UserModel> result = new ArrayList<>();
+
         myRef.addValueEventListener(new com.google.firebase.database.ValueEventListener() {
             @Override
             public void onDataChange(DataSnapshot snapshot) {
@@ -95,6 +96,9 @@ public class UserDAOFirebaseImpl implements UserDAO {
                     user.setUserEmail(data.child("userEmail").getValue(String.class));
                     user.setUserPassword(data.child("userPassword").getValue(String.class));
                     user.setUserKey(data.getKey());
+
+                    System.out.println(user.getUserEmail());
+                    System.out.println(user.getUserPassword());
 
                     result.add(user);
                 }

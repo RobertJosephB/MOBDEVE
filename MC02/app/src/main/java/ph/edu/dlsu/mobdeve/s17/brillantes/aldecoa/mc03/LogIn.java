@@ -31,7 +31,7 @@ public class LogIn extends AppCompatActivity {
 
         ArrayList<UserModel> users = userDAO.getUsers();
 
-        new CountDownTimer(1000, 1000) {
+        new CountDownTimer(2000, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {
