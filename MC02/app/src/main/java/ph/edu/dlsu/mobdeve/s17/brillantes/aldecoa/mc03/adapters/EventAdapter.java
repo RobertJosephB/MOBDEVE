@@ -36,6 +36,16 @@ public class EventAdapter
     }
     public void updateList (ArrayList<EventModel> newEvents) {
         this.eventList = newEvents;
+        for(int i = 0; i < eventList.size();i++){
+            for(int j = i+1; j < eventList.size();j++){
+                if(eventList.get(i).getEventId() == eventList.get(j).getEventId()) {
+                    eventList.remove(j);
+                    i = 0;
+                    j = 1;
+                }
+
+            }
+        }
         notifyDataSetChanged();
     }
 

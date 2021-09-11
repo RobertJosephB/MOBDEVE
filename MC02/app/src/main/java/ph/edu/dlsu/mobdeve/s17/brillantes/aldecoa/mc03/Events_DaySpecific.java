@@ -54,6 +54,18 @@ public class Events_DaySpecific extends AppCompatActivity {
         Random rand = new Random();
         eventDAO = new EventDAOFirebaseImpl(getApplicationContext(),userID);
         eventList = eventDAO.getDayEvents(displayedMonth,year,day);
+        Handler handler = new Handler();
+
+        Runnable runnable = new Runnable() {
+            @Override
+            public void run() {
+                eventAdapter.updateList(eventList);
+                eventAdapter.notifyDataSetChanged();
+
+                handler.postDelayed(this, 1000);
+            }
+        };
+        handler.postDelayed(runnable, 1000);
         switch (displayedMonth) {
             case "January":     shortMonth = "JAN.";    break;
             case "February":    shortMonth = "FEB.";    break;
@@ -87,7 +99,7 @@ public class Events_DaySpecific extends AppCompatActivity {
                         temp.setTime("0"+newTime);
                     else
                         temp.setTime(newTime);
-                    System.out.println(userID);
+
                     temp.setUserId(userID);
                     temp.setNotificationType(newAlarm);
                     temp.setEventId(rand.nextInt());
@@ -96,17 +108,7 @@ public class Events_DaySpecific extends AppCompatActivity {
                     eventList = eventDAO.getDayEvents(displayedMonth,year,day);
                     eventAdapter.updateList(eventList);
 
-                    Handler handler = new Handler();
 
-                    Runnable runnable = new Runnable() {
-                        @Override
-                        public void run() {
-                            eventAdapter.notifyDataSetChanged();
-
-                            handler.postDelayed(this, 2000);
-                        }
-                    };
-                    handler.postDelayed(runnable, 2000);
 
 
                 }
@@ -139,7 +141,7 @@ public class Events_DaySpecific extends AppCompatActivity {
     {
         super.onResume();
         eventList = eventDAO.getDayEvents(displayedMonth,year,day);
-        new CountDownTimer(3000, 1000) {
+        new CountDownTimer(1000, 1000) {
 
             @Override
             public void onTick(long millisUntilFinished) {

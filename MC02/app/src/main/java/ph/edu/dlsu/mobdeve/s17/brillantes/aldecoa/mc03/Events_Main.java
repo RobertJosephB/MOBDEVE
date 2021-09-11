@@ -109,30 +109,8 @@ public class Events_Main extends AppCompatActivity {
         this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
-        for(int j = 0; j < currentMonthDays.size(); j++){
-            ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
-
-            int finalJ = j;
-            new CountDownTimer(2000, 1000) {
-                @Override
-                public void onTick(long millisUntilFinished) {
-
-                }
-
-                @Override
-                public void onFinish() {
-
-                    try {
-                        temp.get(0).getMonthName();
-                        currentMonthDays.get(finalJ).setEvents(temp);
-                    } catch (java.lang.IndexOutOfBoundsException e) {
-
-                    }
-                }
-            }.start();
 
 
-        }
         setOnClickListener();
 
         eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays,listener);
@@ -146,6 +124,43 @@ public class Events_Main extends AppCompatActivity {
 
             startActivity(changeMonth);
         });
+        Handler handler_data = new Handler();
+
+        Runnable runnable_data = new Runnable() {
+            @Override
+            public void run() {
+
+                for(int j = 0; j < currentMonthDays.size(); j++){
+                    ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
+
+                    int finalJ = j;
+                    new CountDownTimer(2000, 1000) {
+                        @Override
+                        public void onTick(long millisUntilFinished) {
+
+                        }
+
+                        @Override
+                        public void onFinish() {
+
+                            try {
+                                temp.get(0).getMonthName();
+                                currentMonthDays.get(finalJ).setEvents(temp);
+
+                            } catch (java.lang.IndexOutOfBoundsException e) {
+
+                            }
+                        }
+                    }.start();
+
+                    eventsMainAdapter.updateList(currentMonthDays);
+
+                    eventsMainAdapter.notifyDataSetChanged();
+                }
+                handler_data.postDelayed(this, 1000);
+            }
+        };
+        handler_data.postDelayed(runnable_data, 4000);
         Handler handler = new Handler();
 
         Runnable runnable = new Runnable() {
@@ -155,10 +170,10 @@ public class Events_Main extends AppCompatActivity {
 
                 eventsMainAdapter.notifyDataSetChanged();
 
-                handler.postDelayed(this, 5000);
+                handler.postDelayed(this, 2000);
             }
         };
-        handler.postDelayed(runnable, 5000);
+        handler.postDelayed(runnable, 2000);
 
     }
 
@@ -183,23 +198,47 @@ public class Events_Main extends AppCompatActivity {
         super.onResume();
 
         if (!this.storagePreferences.getStringPreferences("oldCurrentMonth").equals(this.storagePreferences.getStringPreferences("currentMonth"))
-            || !this.storagePreferences.getStringPreferences("oldCurrentYear").equals(this.storagePreferences.getStringPreferences("currentYear"))) {
+                || !this.storagePreferences.getStringPreferences("oldCurrentYear").equals(this.storagePreferences.getStringPreferences("currentYear"))) {
 
             String displayedMonth = this.storagePreferences.getStringPreferences("currentMonth");
             currentMonth = displayedMonth;
             switch (displayedMonth) {
-                case "January":     displayedMonth = "JAN.";    break;
-                case "February":    displayedMonth = "FEB.";    break;
-                case "March":       displayedMonth = "MAR.";    break;
-                case "April":       displayedMonth = "APR.";    break;
-                case "May":         displayedMonth = "MAY";     break;
-                case "June":        displayedMonth = "JUNE";    break;
-                case "July":        displayedMonth = "JULY";    break;
-                case "August":      displayedMonth = "AUG.";    break;
-                case "September":   displayedMonth = "SEPT.";   break;
-                case "October":     displayedMonth = "OCT.";    break;
-                case "November":    displayedMonth = "NOV.";    break;
-                case "December":    displayedMonth = "DEC.";    break;
+                case "January":
+                    displayedMonth = "JAN.";
+                    break;
+                case "February":
+                    displayedMonth = "FEB.";
+                    break;
+                case "March":
+                    displayedMonth = "MAR.";
+                    break;
+                case "April":
+                    displayedMonth = "APR.";
+                    break;
+                case "May":
+                    displayedMonth = "MAY";
+                    break;
+                case "June":
+                    displayedMonth = "JUNE";
+                    break;
+                case "July":
+                    displayedMonth = "JULY";
+                    break;
+                case "August":
+                    displayedMonth = "AUG.";
+                    break;
+                case "September":
+                    displayedMonth = "SEPT.";
+                    break;
+                case "October":
+                    displayedMonth = "OCT.";
+                    break;
+                case "November":
+                    displayedMonth = "NOV.";
+                    break;
+                case "December":
+                    displayedMonth = "DEC.";
+                    break;
             }
 
             binding.tvCurrentMonth.setText(displayedMonth);
@@ -229,43 +268,7 @@ public class Events_Main extends AppCompatActivity {
             this.storagePreferences.saveStringPreferences("oldCurrentYear", this.storagePreferences.getStringPreferences("currentYear"));
 
 
-            for(int j = 0; j < currentMonthDays.size(); j++){
-
-
-
-                ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
-
-
-                try{
-                    temp.get(0).getMonthName();
-                    currentMonthDays.get(j).setEvents(temp);
-                }catch(java.lang.IndexOutOfBoundsException e){
-
-                }
-
-
-            }
-
-            this.eventsMainAdapter.updateList(this.currentMonthDays);
         }
-        for(int j = 0; j < currentMonthDays.size(); j++){
-
-
-
-            ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
-
-
-            try{
-                temp.get(0).getMonthName();
-                currentMonthDays.get(j).setEvents(temp);
-            }catch(java.lang.IndexOutOfBoundsException e){
-
-            }
-
-
-        }
-
-        this.eventsMainAdapter.updateList(this.currentMonthDays);
     }
 
     @Override
