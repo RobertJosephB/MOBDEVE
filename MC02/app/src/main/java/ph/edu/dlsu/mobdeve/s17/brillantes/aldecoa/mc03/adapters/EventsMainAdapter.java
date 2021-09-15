@@ -42,8 +42,20 @@ public class EventsMainAdapter
 
     public void updateList (ArrayList<DayModel> newMonthDays) {
         this.currentMonthDays = newMonthDays;
+        ArrayList<EventModel> temp = new ArrayList<>();
+        EventModel noEvents = new EventModel();
+        noEvents.setEventTitle("No events");
+        temp.add(noEvents);
+
+        for(int i = 0; i < currentMonthDays.size();i++){
+            System.out.println(currentMonthDays.get(0).getEvents().size());
+            if(currentMonthDays.get(i).getEvents().size()==0)
+                currentMonthDays.get(i).setEvents(temp);
+
+        }
         notifyDataSetChanged();
     }
+
 
     @Override
     public int getItemCount() {
