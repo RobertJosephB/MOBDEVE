@@ -117,12 +117,19 @@ public class Events_Main extends AppCompatActivity {
         binding.rvEventMainList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventMainList.setAdapter(eventsMainAdapter);
 
+
         binding.tvCurrentMonth.setOnClickListener( v -> {
             Intent changeMonth = new Intent(Events_Main.this, ChangeMonth.class);
 
             changeMonth.putExtra("calendar", this.calendar);
 
             startActivity(changeMonth);
+        });
+        binding.logoutMain.setOnClickListener( v -> {
+            Intent welcome = new Intent(Events_Main.this, Welcome.class);
+
+            startActivity(welcome);
+            finish();
         });
         Handler handler_data = new Handler();
 
@@ -131,10 +138,10 @@ public class Events_Main extends AppCompatActivity {
             public void run() {
 
                 for(int j = 0; j < currentMonthDays.size(); j++){
-                    ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonthDays.get(j).getMonthName(),currentYear,currentMonthDays.get(j).getDayNumber());
+                    ArrayList<EventModel> temp = eventDAO.getDayEvents(currentMonth,currentYear,currentMonthDays.get(j).getDayNumber());
 
                     int finalJ = j;
-                    new CountDownTimer(2000, 1000) {
+                    new CountDownTimer(1000, 1000) {
                         @Override
                         public void onTick(long millisUntilFinished) {
 
@@ -146,6 +153,9 @@ public class Events_Main extends AppCompatActivity {
                             try {
                                 temp.get(0).getMonthName();
                                 currentMonthDays.get(finalJ).setEvents(temp);
+                                eventsMainAdapter.updateList(currentMonthDays);
+
+                                eventsMainAdapter.notifyDataSetChanged();
 
                             } catch (java.lang.IndexOutOfBoundsException e) {
 
@@ -153,9 +163,7 @@ public class Events_Main extends AppCompatActivity {
                         }
                     }.start();
 
-                    eventsMainAdapter.updateList(currentMonthDays);
 
-                    eventsMainAdapter.notifyDataSetChanged();
                 }
                 handler_data.postDelayed(this, 1000);
             }
@@ -167,6 +175,7 @@ public class Events_Main extends AppCompatActivity {
             @Override
             public void run() {
                 eventsMainAdapter.updateList(currentMonthDays);
+
 
                 eventsMainAdapter.notifyDataSetChanged();
 

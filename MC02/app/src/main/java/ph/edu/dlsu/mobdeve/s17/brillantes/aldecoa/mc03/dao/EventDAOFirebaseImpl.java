@@ -127,7 +127,7 @@ public class EventDAOFirebaseImpl implements EventDAO{
             @Override
             public void onDataChange(DataSnapshot snapshot) {
                 for(DataSnapshot data: snapshot.getChildren()){
-                    System.out.println(i[0]);
+
                     i[0]++;
                     EventModel event = new EventModel();
                     event.setEventId(data.child("eventId").getValue(Integer.class));
@@ -187,7 +187,7 @@ public class EventDAOFirebaseImpl implements EventDAO{
                     if(event.getEventId() == eventId)
                         if(event.getUserId().equals(userID))
                             temp[0] = event;
-                    System.out.println("GETTING" + temp[0].getEventTitle());
+
                 }
 
             }
@@ -244,7 +244,6 @@ public class EventDAOFirebaseImpl implements EventDAO{
 
             @Override
             public void onFinish() {
-                System.out.println("GOT" + key);
                 if (!key.equals("")) {
                     myRef.child(key).removeValue();
                 }

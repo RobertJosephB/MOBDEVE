@@ -1,4 +1,4 @@
-package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
+/*package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
 import android.view.View;
 import android.widget.TextView;
@@ -39,3 +39,5 @@ public class EventViewHolder extends RecyclerView.ViewHolder {
         this.tv_delete.setOnClickListener(onClickListener);
     }
 }
+
+ */

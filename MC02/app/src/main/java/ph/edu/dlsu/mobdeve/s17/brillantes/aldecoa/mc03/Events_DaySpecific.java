@@ -80,6 +80,12 @@ public class Events_DaySpecific extends AppCompatActivity {
             case "November":    shortMonth = "NOV.";    break;
             case "December":    shortMonth = "DEC.";    break;
         }
+        binding.logoutDay.setOnClickListener( v -> {
+            Intent welcome = new Intent(Events_DaySpecific.this, Welcome.class);
+
+            startActivity(welcome);
+            finish();
+        });
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {

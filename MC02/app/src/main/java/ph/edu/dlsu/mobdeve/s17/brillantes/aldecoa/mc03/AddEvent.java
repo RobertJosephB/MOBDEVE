@@ -75,7 +75,12 @@ public class AddEvent extends AppCompatActivity {
                 break;
         }
         etSendTo = binding.etSendingTo;
+        binding.logoutEe.setOnClickListener( v -> {
+            Intent welcome = new Intent(AddEvent.this, Welcome.class);
 
+            startActivity(welcome);
+            finish();
+        });
         binding.fabAddEvent.setOnClickListener(v->{
             Intent returnIntent = new Intent();
             returnIntent.putExtra("title",etTitle.getText().toString());

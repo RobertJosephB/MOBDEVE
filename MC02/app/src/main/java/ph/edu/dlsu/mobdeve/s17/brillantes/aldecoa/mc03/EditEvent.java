@@ -57,6 +57,12 @@ public class EditEvent extends AppCompatActivity {
             etTimeHr.setText(extras.getString("time").substring(0, 2));
             etTimeMin.setText(extras.getString("time").substring(2, 4));
         }
+        binding.logoutEe.setOnClickListener( v -> {
+            Intent welcome = new Intent(EditEvent.this, Welcome.class);
+
+            startActivity(welcome);
+            finish();
+        });
         etDetails = binding.etEditEventDetails;
         etDetails.setText(extras.getString("details"));
         btnAlarm = binding.btnEditEventAlarm;

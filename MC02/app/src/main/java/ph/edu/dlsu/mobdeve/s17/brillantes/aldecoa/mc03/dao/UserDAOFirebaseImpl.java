@@ -97,8 +97,7 @@ public class UserDAOFirebaseImpl implements UserDAO {
                     user.setUserPassword(data.child("userPassword").getValue(String.class));
                     user.setUserKey(data.getKey());
 
-                    System.out.println(user.getUserEmail());
-                    System.out.println(user.getUserPassword());
+
 
                     result.add(user);
                 }
