@@ -70,9 +70,6 @@ public class SingleEvent extends AppCompatActivity {
                     newDetails = data.getString("details");
                     newAlarm = data.getString("alarm");
 
-
-
-
                     EventModel temp = eventDAO.getEvent(id);
                     new CountDownTimer(1000, 1000) {
                         @Override

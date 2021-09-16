@@ -1,12 +1,19 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02"
+    package="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03"
     android:versionCode="1"
     android:versionName="1.0" >
 
     <uses-sdk
         android:minSdkVersion="26"
         android:targetSdkVersion="30" />
+
+    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
 
     <application
         android:allowBackup="true"
@@ -19,19 +26,69 @@
         android:supportsRtl="true"
         android:testOnly="true"
         android:theme="@style/Theme.MC02" >
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth" />
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.ChangeMonth" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Welcome" >
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main" />
-        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.LogIn" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp2" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.EditEvent" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.AddEvent" />
+        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent" />
+
+        <service
+            android:name="com.google.firebase.components.ComponentDiscoveryService"
+            android:directBootAware="true"
+            android:exported="false" >
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+            <meta-data
+                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+                android:value="com.google.firebase.components.ComponentRegistrar" />
+        </service>
+
+        <provider
+            android:name="com.google.firebase.provider.FirebaseInitProvider"
+            android:authorities="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.firebaseinitprovider"
+            android:directBootAware="true"
+            android:exported="false"
+            android:initOrder="100" />
+
+        <receiver
+            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+            android:enabled="true"
+            android:exported="false" >
+        </receiver>
+
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementService"
+            android:enabled="true"
+            android:exported="false" />
+        <service
+            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+            android:enabled="true"
+            android:exported="false"
+            android:permission="android.permission.BIND_JOB_SERVICE" />
+
+        <activity
+            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+            android:exported="false"
+            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
     </application>
 
 </manifest>

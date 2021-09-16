@@ -1,6 +1,6 @@
 1<?xml version="1.0" encoding="utf-8"?>
 2<manifest xmlns:android="http://schemas.android.com/apk/res/android"
-3    package="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02"
+3    package="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03"
 4    android:versionCode="1"
 5    android:versionName="1.0" >
 6
@@ -10,57 +10,167 @@
 9        android:targetSdkVersion="30" />
 9-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml
 10
-11    <application
-11-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-25:19
-12        android:allowBackup="true"
-12-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:6:9-35
-13        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
-13-->[androidx.core:core:1.5.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\cc5e9dcdc56dc39042f72c501235e83f\core-1.5.0\AndroidManifest.xml:24:18-86
-14        android:debuggable="true"
-15        android:extractNativeLibs="false"
-16        android:icon="@mipmap/ic_launcher"
-16-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:7:9-43
-17        android:label="@string/app_name"
-17-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:8:9-41
-18        android:roundIcon="@mipmap/ic_launcher_round"
-18-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:9:9-54
-19        android:supportsRtl="true"
-19-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:10:9-35
-20        android:testOnly="true"
-21        android:theme="@style/Theme.MC02" >
-21-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:11:9-42
-22        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth" />
-22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-58
-22-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-46
-23        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome" >
-23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:9-19:20
-23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:19-42
-24            <intent-filter>
-24-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:13-18:29
-25                <action android:name="android.intent.action.MAIN" />
-25-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:17-69
-25-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:25-66
-26
-27                <category android:name="android.intent.category.LAUNCHER" />
-27-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:17-77
-27-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:27-74
-28            </intent-filter>
-29        </activity>
-30        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn" />
-30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-43
-30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-40
-31        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp" />
-31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-44
-31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-41
-32        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2" />
-32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-45
-32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-42
-33        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main" />
-33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-49
-33-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-46
-34        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific" />
-34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:9-56
-34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:19-53
-35    </application>
-36
-37</manifest>
+11    <!-- Although the *SdkVersion is captured in gradle build files, this is required for non gradle builds -->
+12    <!-- <uses-sdk android:minSdkVersion="14"/> -->
+13    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+13-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:25:5-79
+13-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:25:22-76
+14    <uses-permission android:name="android.permission.INTERNET" />
+14-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:26:5-67
+14-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:26:22-64
+15    <uses-permission android:name="android.permission.WAKE_LOCK" />
+15-->[com.google.android.gms:play-services-measurement-api:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\2eacc2493153d7a697b2ed32d585fce6\play-services-measurement-api-19.0.1\AndroidManifest.xml:24:5-68
+15-->[com.google.android.gms:play-services-measurement-api:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\2eacc2493153d7a697b2ed32d585fce6\play-services-measurement-api-19.0.1\AndroidManifest.xml:24:22-65
+16    <uses-permission android:name="com.google.android.finsky.permission.BIND_GET_INSTALL_REFERRER_SERVICE" />
+16-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:26:5-110
+16-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:26:22-107
+17
+18    <application
+18-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:5:5-28:19
+19        android:allowBackup="true"
+19-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:6:9-35
+20        android:appComponentFactory="androidx.core.app.CoreComponentFactory"
+20-->[androidx.core:core:1.5.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\7313241674c4b07dde6250251a8b2720\core-1.5.0\AndroidManifest.xml:24:18-86
+21        android:debuggable="true"
+22        android:extractNativeLibs="false"
+23        android:icon="@mipmap/ic_launcher"
+23-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:7:9-43
+24        android:label="@string/app_name"
+24-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:8:9-41
+25        android:roundIcon="@mipmap/ic_launcher_round"
+25-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:9:9-54
+26        android:supportsRtl="true"
+26-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:10:9-35
+27        android:testOnly="true"
+28        android:theme="@style/Theme.MC02" >
+28-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:11:9-42
+29        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.ChangeMonth" />
+29-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:9-58
+29-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:12:19-46
+30        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Welcome" >
+30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:9-19:20
+30-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:13:19-42
+31            <intent-filter>
+31-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:14:13-18:29
+32                <action android:name="android.intent.action.MAIN" />
+32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:17-69
+32-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:15:25-66
+33
+34                <category android:name="android.intent.category.LAUNCHER" />
+34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:17-77
+34-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:17:27-74
+35            </intent-filter>
+36        </activity>
+37        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.LogIn" />
+37-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:9-43
+37-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:20:19-40
+38        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp" />
+38-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:9-44
+38-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:21:19-41
+39        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp2" />
+39-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:9-45
+39-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:22:19-42
+40        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main" />
+40-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:9-49
+40-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:23:19-46
+41        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific" />
+41-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:9-56
+41-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:24:19-53
+42        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.EditEvent" />
+42-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:25:9-47
+42-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:25:19-44
+43        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.AddEvent" />
+43-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:26:9-46
+43-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:26:19-43
+44        <activity android:name="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent" />
+44-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:27:9-48
+44-->C:\Users\geloa\AndroidStudioProjects\MC02\app\src\main\AndroidManifest.xml:27:19-46
+45
+46        <service
+46-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:29:9-35:19
+47            android:name="com.google.firebase.components.ComponentDiscoveryService"
+47-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:30:13-84
+48            android:directBootAware="true"
+48-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:35:13-43
+49            android:exported="false" >
+49-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:31:13-37
+50            <meta-data
+50-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:32:13-34:85
+51                android:name="com.google.firebase.components:com.google.firebase.database.DatabaseRegistrar"
+51-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:33:17-109
+52                android:value="com.google.firebase.components.ComponentRegistrar" />
+52-->[com.google.firebase:firebase-database:20.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\fe2cde7a06a61f0ee6058e37ca40a72c\firebase-database-20.0.1\AndroidManifest.xml:34:17-82
+53            <meta-data
+53-->[com.google.android.gms:play-services-measurement-api:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\2eacc2493153d7a697b2ed32d585fce6\play-services-measurement-api-19.0.1\AndroidManifest.xml:30:13-32:85
+54                android:name="com.google.firebase.components:com.google.firebase.analytics.connector.internal.AnalyticsConnectorRegistrar"
+54-->[com.google.android.gms:play-services-measurement-api:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\2eacc2493153d7a697b2ed32d585fce6\play-services-measurement-api-19.0.1\AndroidManifest.xml:31:17-139
+55                android:value="com.google.firebase.components.ComponentRegistrar" />
+55-->[com.google.android.gms:play-services-measurement-api:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\2eacc2493153d7a697b2ed32d585fce6\play-services-measurement-api-19.0.1\AndroidManifest.xml:32:17-82
+56            <meta-data
+56-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\753c49e116d9e717ba99b317388e058b\firebase-installations-17.0.0\AndroidManifest.xml:18:13-20:85
+57                android:name="com.google.firebase.components:com.google.firebase.installations.FirebaseInstallationsRegistrar"
+57-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\753c49e116d9e717ba99b317388e058b\firebase-installations-17.0.0\AndroidManifest.xml:19:17-127
+58                android:value="com.google.firebase.components.ComponentRegistrar" />
+58-->[com.google.firebase:firebase-installations:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\753c49e116d9e717ba99b317388e058b\firebase-installations-17.0.0\AndroidManifest.xml:20:17-82
+59        </service>
+60
+61        <provider
+61-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:26:9-31:39
+62            android:name="com.google.firebase.provider.FirebaseInitProvider"
+62-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:27:13-77
+63            android:authorities="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.firebaseinitprovider"
+63-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:28:13-72
+64            android:directBootAware="true"
+64-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:29:13-43
+65            android:exported="false"
+65-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:30:13-37
+66            android:initOrder="100" />
+66-->[com.google.firebase:firebase-common:20.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\a290a42657b5c166afc7163c07f133aa\firebase-common-20.0.0\AndroidManifest.xml:31:13-36
+67
+68        <receiver
+68-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:29:9-33:20
+69            android:name="com.google.android.gms.measurement.AppMeasurementReceiver"
+69-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:30:13-85
+70            android:enabled="true"
+70-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:31:13-35
+71            android:exported="false" >
+71-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:32:13-37
+72        </receiver>
+73
+74        <service
+74-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:35:9-38:40
+75            android:name="com.google.android.gms.measurement.AppMeasurementService"
+75-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:36:13-84
+76            android:enabled="true"
+76-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:37:13-35
+77            android:exported="false" />
+77-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:38:13-37
+78        <service
+78-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:39:9-43:72
+79            android:name="com.google.android.gms.measurement.AppMeasurementJobService"
+79-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:40:13-87
+80            android:enabled="true"
+80-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:41:13-35
+81            android:exported="false"
+81-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:42:13-37
+82            android:permission="android.permission.BIND_JOB_SERVICE" />
+82-->[com.google.android.gms:play-services-measurement:19.0.1] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\ad9a3dbad45c247a995ef83e338acfb6\play-services-measurement-19.0.1\AndroidManifest.xml:43:13-69
+83
+84        <activity
+84-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b98a5f19b35445d41c86654f8d0d32f6\play-services-base-17.1.0\AndroidManifest.xml:23:9-26:75
+85            android:name="com.google.android.gms.common.api.GoogleApiActivity"
+85-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b98a5f19b35445d41c86654f8d0d32f6\play-services-base-17.1.0\AndroidManifest.xml:24:13-79
+86            android:exported="false"
+86-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b98a5f19b35445d41c86654f8d0d32f6\play-services-base-17.1.0\AndroidManifest.xml:25:13-37
+87            android:theme="@android:style/Theme.Translucent.NoTitleBar" />
+87-->[com.google.android.gms:play-services-base:17.1.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b98a5f19b35445d41c86654f8d0d32f6\play-services-base-17.1.0\AndroidManifest.xml:26:13-72
+88
+89        <meta-data
+89-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b4a946a05efa4de178e1caf828aa0875\play-services-basement-17.0.0\AndroidManifest.xml:23:9-25:69
+90            android:name="com.google.android.gms.version"
+90-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b4a946a05efa4de178e1caf828aa0875\play-services-basement-17.0.0\AndroidManifest.xml:24:13-58
+91            android:value="@integer/google_play_services_version" />
+91-->[com.google.android.gms:play-services-basement:17.0.0] C:\Users\geloa\.gradle\caches\transforms-2\files-2.1\b4a946a05efa4de178e1caf828aa0875\play-services-basement-17.0.0\AndroidManifest.xml:25:13-66
+92    </application>
+93
+94</manifest>

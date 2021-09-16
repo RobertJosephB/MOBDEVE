@@ -3,15 +3,24 @@ package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 
+import android.app.AlarmManager;
+import android.app.NotificationChannel;
+import android.app.NotificationManager;
+import android.app.PendingIntent;
+import android.content.Context;
 import android.content.Intent;
+import android.os.Build;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+import android.widget.Toast;
 
+import java.lang.reflect.Array;
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
+import java.util.Calendar;
 import java.util.Date;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventsMainAdapter;
@@ -28,6 +37,9 @@ public class Events_Main extends AppCompatActivity {
 
     private ActivityEventsMainBinding binding;
     private CalendarModel calendar;
+    private Calendar cal;
+    private AlarmManager alarmManager;
+    private PendingIntent pendingIntent;
     private EventsMainAdapter eventsMainAdapter;
     private ArrayList<DayModel> currentMonthDays;
     private String currentMonth;
@@ -53,7 +65,7 @@ public class Events_Main extends AppCompatActivity {
         email = extras.getString("email");
         eventDAO  = new EventDAOFirebaseImpl(getApplicationContext(),userID);
 
-
+        createNotificationChannel();
 
         this.calendar = new CalendarModel();
         this.storagePreferences = new StoragePreferences(this);
@@ -67,7 +79,6 @@ public class Events_Main extends AppCompatActivity {
         int currentYearIndex = -1;
         String displayedMonth = "";
         String displayedYear = "";
-
 
         int i;
 
@@ -88,8 +99,6 @@ public class Events_Main extends AppCompatActivity {
 
         this.currentMonth = tempCurrentYear.get(currentMonthIndex).getMonthName();
         this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
-
-
 
         switch (this.currentMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -112,8 +121,6 @@ public class Events_Main extends AppCompatActivity {
         this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
-
-
         setOnClickListener();
 
         eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays,listener);
@@ -128,12 +135,37 @@ public class Events_Main extends AppCompatActivity {
 
             startActivity(changeMonth);
         });
+
         binding.logoutMain.setOnClickListener( v -> {
             Intent welcome = new Intent(Events_Main.this, Welcome.class);
 
             startActivity(welcome);
             finish();
         });
+
+        binding.btnSetAlarm.setOnClickListener( v -> {
+            ArrayList<EventModel> currentEventList = eventDAO.getEvents();
+            int n, time, hour, min;
+            alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+
+            for (n = 0; n < currentEventList.size(); n++) {
+                    this.cal = Calendar.getInstance();
+                    time = Integer.parseInt(currentEventList.get(n).getTime());
+                    min = time % 100;
+                    hour = (time - min) / 100;
+                    this.cal.set(Calendar.HOUR_OF_DAY, hour);
+                    this.cal.set(Calendar.MINUTE, min);
+                    this.cal.set(Calendar.SECOND, 0);
+                    this.cal.set(Calendar.MILLISECOND, 0);
+
+                    Intent intent = new Intent(Events_Main.this, AlarmReceiver.class);
+
+                    pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), n, intent, 0);
+
+                    alarmManager.set(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+            }
+        });
+
         Handler handler_data = new Handler();
 
         Runnable runnable_data = new Runnable() {
@@ -165,8 +197,6 @@ public class Events_Main extends AppCompatActivity {
                             }
                         }
                     }.start();
-
-
                 }
                 handler_data.postDelayed(this, 1000);
             }
@@ -289,6 +319,19 @@ public class Events_Main extends AppCompatActivity {
             this.storagePreferences.saveStringPreferences("oldCurrentYear", this.storagePreferences.getStringPreferences("currentYear"));
 
 
+        }
+    }
+
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "alarmChannel";
+            String description = "Channel for Alarm Manager";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("alarm", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
         }
     }
 

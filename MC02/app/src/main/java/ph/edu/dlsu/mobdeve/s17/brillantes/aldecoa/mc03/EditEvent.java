@@ -4,6 +4,7 @@ import android.annotation.SuppressLint;
 import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
+import android.provider.AlarmClock;
 import android.widget.EditText;
 import android.widget.LinearLayout;
 import android.widget.ToggleButton;
@@ -108,10 +109,7 @@ public class EditEvent extends AppCompatActivity {
             setResult(Activity.RESULT_OK,returnIntent);
             finish();
         });
-
-
-
-
-
     }
+
+
 }

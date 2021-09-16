@@ -4,6 +4,7 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
+import android.provider.AlarmClock;
 
 import androidx.activity.result.ActivityResult;
 import androidx.activity.result.ActivityResultCallback;
@@ -117,10 +118,6 @@ public class Events_DaySpecific extends AppCompatActivity {
                     eventDAO.addEvent(temp);
                     eventList = eventDAO.getDayEvents(displayedMonth,year,day);
                     eventAdapter.updateList(eventList);
-
-
-
-
                 }
             }
         });
@@ -141,11 +138,7 @@ public class Events_DaySpecific extends AppCompatActivity {
 
             activityResultLauncher.launch(addEvent);
 
-
-
         });
-
-
     }
     @Override
     public void onResume()
