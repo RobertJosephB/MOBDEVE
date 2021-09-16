@@ -14,7 +14,7 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEditE
 
 public class EditEvent extends AppCompatActivity {
     private ActivityEditEventBinding binding;
-    private String displayedMonth,day;
+    private String displayedMonth,day,email;
 
 
     @SuppressLint("SetTextI18n")
@@ -27,8 +27,10 @@ public class EditEvent extends AppCompatActivity {
         binding = ActivityEditEventBinding.inflate(getLayoutInflater());
         binding.tvModifyTitle.setText("Edit Event");
         Bundle extras = getIntent().getExtras();
+        email = extras.getString("email");
         displayedMonth = extras.getString("monthname");
         day = extras.getString("day");
+        binding.tvName.setText(email.substring(0,6));
 
         switch (displayedMonth) {
             case "January":     displayedMonth = "JAN.";    break;

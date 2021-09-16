@@ -42,6 +42,9 @@ public class EventsMainAdapter
 
     public void updateList (ArrayList<DayModel> newMonthDays) {
         this.currentMonthDays = newMonthDays;
+        System.out.println("TITLE");
+        System.out.println(newMonthDays.get(0).getMonthName());
+        System.out.println(newMonthDays.get(0).getEvents().get(0).getEventTitle());
         ArrayList<EventModel> temp = new ArrayList<>();
         EventModel noEvents = new EventModel();
         noEvents.setEventTitle("No events");

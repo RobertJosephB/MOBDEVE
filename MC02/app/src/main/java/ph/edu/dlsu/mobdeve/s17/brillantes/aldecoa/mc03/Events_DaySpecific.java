@@ -32,6 +32,7 @@ public class Events_DaySpecific extends AppCompatActivity {
     private String displayedMonth;
     private String year;
     private String day;
+    private String email;
 
     private EventDAO eventDAO;
     private String newTitle,newTime, newDetails,newAlarm, newSendTo,newType, newNotificationTime, userID;
@@ -47,6 +48,7 @@ public class Events_DaySpecific extends AppCompatActivity {
 
         Bundle extras = getIntent().getExtras();
         displayedMonth = extras.getString("monthname");
+        email = extras.getString("email");
 
         year = extras.getString("year");
         day = extras.getString("day");
@@ -80,12 +82,14 @@ public class Events_DaySpecific extends AppCompatActivity {
             case "November":    shortMonth = "NOV.";    break;
             case "December":    shortMonth = "DEC.";    break;
         }
+        binding.tvName.setText(email.substring(0,6));
         binding.logoutDay.setOnClickListener( v -> {
             Intent welcome = new Intent(Events_DaySpecific.this, Welcome.class);
 
             startActivity(welcome);
             finish();
         });
+
         activityResultLauncher = registerForActivityResult(new ActivityResultContracts.StartActivityForResult(), new ActivityResultCallback<ActivityResult>() {
             @Override
             public void onActivityResult(ActivityResult result) {
@@ -123,7 +127,7 @@ public class Events_DaySpecific extends AppCompatActivity {
 
         binding.tvCurrentMonth.setText(shortMonth);
 
-        eventAdapter = new EventAdapter(getApplicationContext(), eventList,userID);
+        eventAdapter = new EventAdapter(getApplicationContext(), eventList,userID,email);
 
         binding.rvEventList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventList.setAdapter(eventAdapter);
@@ -133,6 +137,7 @@ public class Events_DaySpecific extends AppCompatActivity {
             Intent addEvent = new Intent(Events_DaySpecific.this, AddEvent.class);
             addEvent.putExtra("monthname",extras.getString("monthname"));
             addEvent.putExtra("day",day);
+            addEvent.putExtra("email",email);
 
             activityResultLauncher.launch(addEvent);
 

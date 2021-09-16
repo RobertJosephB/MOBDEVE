@@ -32,6 +32,7 @@ public class SingleEvent extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         binding = ActivitySingleEventBinding.inflate(getLayoutInflater());
         Bundle extras = getIntent().getExtras();
+        String email = extras.getString("email");
         String displayedMonth = extras.getString("monthname");
         String day = extras.getString("day");
         String title = extras.getString("title");
@@ -41,6 +42,7 @@ public class SingleEvent extends AppCompatActivity {
         String userID = extras.getString("userID");
         int id = extras.getInt("id");
         binding.tvCurrentMonthSmall.setText(displayedMonth);
+        binding.tvName.setText(email.substring(0,6));
         eventDAO = new EventDAOFirebaseImpl(getApplicationContext(),userID);
 
         switch (displayedMonth) {
@@ -134,6 +136,7 @@ public class SingleEvent extends AppCompatActivity {
             addEvent.putExtra("time",time);
             addEvent.putExtra("details",details);
             addEvent.putExtra("alarm",alarm);
+            addEvent.putExtra("email",email);
 
 
             activityResultLauncher.launch(addEvent);

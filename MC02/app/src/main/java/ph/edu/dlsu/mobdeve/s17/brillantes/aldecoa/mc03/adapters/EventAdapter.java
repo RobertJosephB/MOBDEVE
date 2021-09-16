@@ -27,12 +27,14 @@ public class EventAdapter
     private Context context;
     private ArrayList<EventModel> eventList;
     EventDAO eventDAO;
+    String email;
 
-    public EventAdapter(Context context, ArrayList<EventModel> eventList,String userID) {
+    public EventAdapter(Context context, ArrayList<EventModel> eventList,String userID,String email) {
 
         this.context = context;
         this.eventList = eventList;
         eventDAO = new EventDAOFirebaseImpl(context,userID);
+        this.email = email;
     }
     public void updateList (ArrayList<EventModel> newEvents) {
         this.eventList = newEvents;
@@ -83,6 +85,7 @@ public class EventAdapter
             singleEvent.putExtra("alarm",eventList.get(position).getNotificationType());
             singleEvent.putExtra("id",eventList.get(position).getEventId());
             singleEvent.putExtra("userID",eventList.get(position).getUserId());
+            singleEvent.putExtra("email",email);
             context.startActivity(singleEvent);
         });
 
