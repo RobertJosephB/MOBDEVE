@@ -35,6 +35,7 @@ public class Events_Main extends AppCompatActivity {
     private StoragePreferences storagePreferences;
     private String LOG_TAG = "Events_Main";
     private String userID = "";
+    private String email = "";
     private EventsMainAdapter.ViewClickListener listener;
     private EventDAO eventDAO;
 
@@ -49,6 +50,7 @@ public class Events_Main extends AppCompatActivity {
         setContentView(binding.getRoot());
         Bundle extras = getIntent().getExtras();
         userID = extras.getString("userID");
+        email = extras.getString("email");
         eventDAO  = new EventDAOFirebaseImpl(getApplicationContext(),userID);
 
 
@@ -103,6 +105,7 @@ public class Events_Main extends AppCompatActivity {
 
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentYear.setText(displayedYear);
+        binding.tvName.setText(email.substring(0,6));
 
         this.storagePreferences.saveStringPreferences("oldCurrentMonth", this.currentMonth);
         this.storagePreferences.saveStringPreferences("currentMonth", this.currentMonth);
@@ -195,6 +198,7 @@ public class Events_Main extends AppCompatActivity {
                 intent.putExtra("day",""+(position+1));
                 intent.putExtra("year",currentYear);
                 intent.putExtra("userID", userID);
+                intent.putExtra("email",email);
                 startActivity(intent);
             }
         };
@@ -205,6 +209,14 @@ public class Events_Main extends AppCompatActivity {
 
         Log.i(LOG_TAG, "onResume()");
         super.onResume();
+        ArrayList<EventModel> temp = new ArrayList<>();
+        EventModel noEvents = new EventModel();
+        noEvents.setEventTitle("No events");
+        temp.add(noEvents);
+        for(int j = 0; j < currentMonthDays.size(); j++)
+            currentMonthDays.get(j).setEvents(temp);
+
+
 
         if (!this.storagePreferences.getStringPreferences("oldCurrentMonth").equals(this.storagePreferences.getStringPreferences("currentMonth"))
                 || !this.storagePreferences.getStringPreferences("oldCurrentYear").equals(this.storagePreferences.getStringPreferences("currentYear"))) {

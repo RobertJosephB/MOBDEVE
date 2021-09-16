@@ -17,6 +17,9 @@ public class AddEvent extends AppCompatActivity {
     private String day;
 
 
+
+
+
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -27,6 +30,7 @@ public class AddEvent extends AppCompatActivity {
         binding = ActivityEditEventBinding.inflate(getLayoutInflater());
         binding.tvModifyTitle.setText("Add Event");
         Bundle extras = getIntent().getExtras();
+        String email = extras.getString("email");
         displayedMonth = extras.getString("monthname");
         day = extras.getString("day");
 
@@ -45,6 +49,7 @@ public class AddEvent extends AppCompatActivity {
             case "December":    displayedMonth = "DEC.";    break;
         }
         setContentView(binding.getRoot());
+        binding.tvName.setText(email.substring(0,6));
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentMonthSmall.setText(displayedMonth);
         binding.tvCurrentDay.setText(day);
@@ -101,8 +106,7 @@ public class AddEvent extends AppCompatActivity {
         });
 
 
-
-
-
     }
+
+
 }

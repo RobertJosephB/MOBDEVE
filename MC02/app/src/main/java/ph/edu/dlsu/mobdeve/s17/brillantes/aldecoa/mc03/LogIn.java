@@ -53,6 +53,7 @@ public class LogIn extends AppCompatActivity {
 
 
                             goToMain.putExtra("userID", users.get(i).getUserKey());
+                            goToMain.putExtra("email",users.get(i).getUserEmail());
 
                             startActivity(goToMain);
                             finish();
