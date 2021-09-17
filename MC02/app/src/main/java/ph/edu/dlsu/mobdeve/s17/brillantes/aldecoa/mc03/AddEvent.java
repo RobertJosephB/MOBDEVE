@@ -199,9 +199,9 @@ public class AddEvent extends AppCompatActivity {
         alarmManager = (AlarmManager)getSystemService(Context.ALARM_SERVICE);
         Intent intent = new Intent(this,NotifyReceiver.class);
         pendingIntent = PendingIntent.getBroadcast(this,0,intent,0);
-        System.out.println("TIME");
-        System.out.println(calendar.getTimeInMillis());
-        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),AlarmManager.INTERVAL_DAY,pendingIntent);
+        
+        alarmManager.setInexactRepeating(AlarmManager.RTC_WAKEUP,calendar.getTimeInMillis(),
+                AlarmManager.INTERVAL_DAY,pendingIntent);
         Toast.makeText(this,"Alarm Set Successfully",Toast.LENGTH_SHORT).show();
 
     }

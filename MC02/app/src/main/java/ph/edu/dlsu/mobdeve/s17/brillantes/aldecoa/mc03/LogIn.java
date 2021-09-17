@@ -41,7 +41,7 @@ public class LogIn extends AppCompatActivity {
             @Override
             public void onFinish() {
                 binding.btnLogIn.setOnClickListener( v -> {
-                    System.out.println(users.size());
+
                     for (int i = 0; i < users.size(); i++) {
 
                         if (binding.etEmail.getText().toString().equals("") || binding.etPassword.getText().toString().equals("")) {
