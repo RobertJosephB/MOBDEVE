@@ -1,2 +1,2 @@
-rootProject.name = "MC02"
+rootProject.name = "mySchedule"
 include ':app'
