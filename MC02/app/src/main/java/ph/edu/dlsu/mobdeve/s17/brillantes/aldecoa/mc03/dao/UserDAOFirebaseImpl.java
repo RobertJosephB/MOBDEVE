@@ -13,7 +13,6 @@ import com.google.firebase.database.FirebaseDatabase;
 import java.util.ArrayList;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.UserModel;
-import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.UserModel;
 
 public class UserDAOFirebaseImpl implements UserDAO {
     private final String PATH = "users";

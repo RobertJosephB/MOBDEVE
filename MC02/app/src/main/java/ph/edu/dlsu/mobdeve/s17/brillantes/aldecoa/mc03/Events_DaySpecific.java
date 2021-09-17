@@ -18,7 +18,6 @@ import java.util.Random;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventAdapter;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl;
-
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsDayspecificBinding;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
 
@@ -35,7 +34,7 @@ public class Events_DaySpecific extends AppCompatActivity {
     private String email;
 
     private EventDAO eventDAO;
-    private String newTitle,newTime, newDetails,newAlarm, newSendTo,newType, newNotificationTime, userID;
+    private String newTitle,newTime, newDetails,newAlarm,newType, newNotificationTime, userID;
     private String shortMonth;
 
 
@@ -82,7 +81,11 @@ public class Events_DaySpecific extends AppCompatActivity {
             case "November":    shortMonth = "NOV.";    break;
             case "December":    shortMonth = "DEC.";    break;
         }
-        binding.tvName.setText(email.substring(0,6));
+        if(email.length()>=6) {
+            binding.tvName.setText(email.substring(0, 6));
+        }
+        else
+            binding.tvName.setText(email);
         binding.logoutDay.setOnClickListener( v -> {
             Intent welcome = new Intent(Events_DaySpecific.this, Welcome.class);
 
@@ -99,7 +102,6 @@ public class Events_DaySpecific extends AppCompatActivity {
                     newTime = data.getString("timeHr").concat(data.getString("timeMin"));
                     newDetails = data.getString("details");
                     newAlarm = data.getString("alarm");
-                    newSendTo = data.getString("sendto");
                     newType = data.getString("type");
                     newNotificationTime = data.getString("ntime");
 

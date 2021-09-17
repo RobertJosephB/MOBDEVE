@@ -5,7 +5,6 @@ import android.app.Activity;
 import android.content.Intent;
 import android.os.Bundle;
 import android.widget.EditText;
-import android.widget.LinearLayout;
 import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -20,7 +19,7 @@ public class EditEvent extends AppCompatActivity {
     @SuppressLint("SetTextI18n")
     @Override
     protected void onCreate(Bundle savedInstanceState) {
-        EditText etTitle, etTimeMin, etTimeHr, etDetails, etSendTo;
+        EditText etTitle, etTimeMin, etTimeHr, etDetails;
         ToggleButton btnAlarm,btnEmail;
 
         super.onCreate(savedInstanceState);
@@ -30,7 +29,11 @@ public class EditEvent extends AppCompatActivity {
         email = extras.getString("email");
         displayedMonth = extras.getString("monthname");
         day = extras.getString("day");
-        binding.tvName.setText(email.substring(0,6));
+        if(email.length()>=6) {
+            binding.tvName.setText(email.substring(0, 6));
+        }
+        else
+            binding.tvName.setText(email);
 
         switch (displayedMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -50,7 +53,7 @@ public class EditEvent extends AppCompatActivity {
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentMonthSmall.setText(displayedMonth);
         binding.tvCurrentDay.setText(day);
-        binding.llSendingTo.setVisibility(LinearLayout.GONE);
+
         etTitle = binding.etEditEventTitle;
         etTitle.setText(extras.getString("title"));
         etTimeHr = binding.etEditEventTimeHr;
@@ -89,7 +92,7 @@ public class EditEvent extends AppCompatActivity {
                 break;
         }
 
-        etSendTo = binding.etSendingTo;
+
 
         binding.fabAddEvent.setOnClickListener(v->{
             Intent returnIntent = new Intent();

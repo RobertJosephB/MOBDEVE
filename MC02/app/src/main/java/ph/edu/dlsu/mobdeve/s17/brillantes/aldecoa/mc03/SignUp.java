@@ -1,14 +1,12 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 
+import androidx.appcompat.app.AppCompatActivity;
+
 import com.google.android.material.snackbar.Snackbar;
 
-import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAO;
-import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySignUpBinding;
 
 public class SignUp extends AppCompatActivity {

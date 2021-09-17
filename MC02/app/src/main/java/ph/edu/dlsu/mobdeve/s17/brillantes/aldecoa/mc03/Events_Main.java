@@ -1,14 +1,14 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
-import androidx.appcompat.app.AppCompatActivity;
-import androidx.recyclerview.widget.LinearLayoutManager;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
 import android.os.Handler;
 import android.util.Log;
 import android.view.View;
+
+import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.LinearLayoutManager;
 
 import java.text.SimpleDateFormat;
 import java.util.ArrayList;
@@ -105,7 +105,11 @@ public class Events_Main extends AppCompatActivity {
 
         binding.tvCurrentMonth.setText(displayedMonth);
         binding.tvCurrentYear.setText(displayedYear);
-        binding.tvName.setText(email.substring(0,6));
+        if(email.length()>=6) {
+            binding.tvName.setText(email.substring(0, 6));
+        }
+        else
+            binding.tvName.setText(email);
 
         this.storagePreferences.saveStringPreferences("oldCurrentMonth", this.currentMonth);
         this.storagePreferences.saveStringPreferences("currentMonth", this.currentMonth);

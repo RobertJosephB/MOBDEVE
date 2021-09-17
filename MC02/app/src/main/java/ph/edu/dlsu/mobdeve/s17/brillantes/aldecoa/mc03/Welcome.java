@@ -1,10 +1,10 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
+
+import androidx.appcompat.app.AppCompatActivity;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityWelcomeBinding;
 

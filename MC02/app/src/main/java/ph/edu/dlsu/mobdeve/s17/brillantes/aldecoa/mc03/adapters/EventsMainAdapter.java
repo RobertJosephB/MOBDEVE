@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import java.util.ArrayList;
 
-
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.R;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.DayModel;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
@@ -42,16 +41,13 @@ public class EventsMainAdapter
 
     public void updateList (ArrayList<DayModel> newMonthDays) {
         this.currentMonthDays = newMonthDays;
-        System.out.println("TITLE");
-        System.out.println(newMonthDays.get(0).getMonthName());
-        System.out.println(newMonthDays.get(0).getEvents().get(0).getEventTitle());
         ArrayList<EventModel> temp = new ArrayList<>();
         EventModel noEvents = new EventModel();
         noEvents.setEventTitle("No events");
         temp.add(noEvents);
 
         for(int i = 0; i < currentMonthDays.size();i++){
-            System.out.println(currentMonthDays.get(0).getEvents().size());
+
             if(currentMonthDays.get(i).getEvents().size()==0)
                 currentMonthDays.get(i).setEvents(temp);
 

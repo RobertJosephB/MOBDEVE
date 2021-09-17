@@ -4,7 +4,6 @@ import android.view.View;
 import android.widget.EditText;
 import android.widget.ToggleButton;
 
-
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.google.android.material.floatingactionbutton.FloatingActionButton;
@@ -12,7 +11,7 @@ import com.google.android.material.floatingactionbutton.FloatingActionButton;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel;
 
 public class EditEventHolder extends RecyclerView.ViewHolder{
-    private EditText editEventTitle, editEventTimeHr,editEventTimeMin, editEventDetails, editEventSendingTo;
+    private EditText editEventTitle, editEventTimeHr,editEventTimeMin, editEventDetails;
     FloatingActionButton add_event;
     ToggleButton btn_alarm, btn_email;
 
@@ -24,7 +23,7 @@ public class EditEventHolder extends RecyclerView.ViewHolder{
         this.editEventDetails = itemView.findViewById(R.id.et_edit_event_details);
         this.btn_alarm = itemView.findViewById(R.id.btn_edit_event_alarm);
         this.btn_email = itemView.findViewById(R.id.btn_edit_event_email);
-        this.editEventSendingTo = itemView.findViewById(R.id.et_sending_to);
+
         this.add_event = itemView.findViewById(R.id.fab_add_event);
 
 

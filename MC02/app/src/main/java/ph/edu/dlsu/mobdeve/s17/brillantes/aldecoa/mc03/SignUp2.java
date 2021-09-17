@@ -1,17 +1,14 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03;
 
-import androidx.appcompat.app.AppCompatActivity;
-
 import android.app.DatePickerDialog;
 import android.content.Intent;
 import android.os.Bundle;
 import android.os.CountDownTimer;
-import android.view.View;
 import android.widget.TextView;
 
-import com.google.android.material.snackbar.Snackbar;
+import androidx.appcompat.app.AppCompatActivity;
 
-import java.util.Calendar;
+import com.google.android.material.snackbar.Snackbar;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAO;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl;
@@ -38,7 +35,7 @@ public class SignUp2 extends AppCompatActivity {
 
         Bundle bundle = getIntent().getExtras();
 
-        binding.btnFinishSignUp.setOnClickListener( v -> {
+        binding.btnFinishSignup.setOnClickListener( v -> {
             Intent finishSignUp = new Intent(SignUp2.this, LogIn.class);
             String su_firstName = binding.etSUFirstName.getText().toString();
             String su_lastName = binding.etSULastName.getText().toString();
