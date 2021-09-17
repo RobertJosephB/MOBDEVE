@@ -25,6 +25,9 @@
         <activity android:name=".EditEvent" />
         <activity android:name=".AddEvent" />
         <activity android:name=".SingleEvent"/>
+        <receiver
+            android:name=".util.NotifyReceiver">
+        </receiver>
     </application>
 
 </manifest>
