@@ -18,6 +18,8 @@ import android.widget.ToggleButton;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import com.google.android.material.snackbar.Snackbar;
+
 import java.util.Calendar;
 
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEditEventBinding;
@@ -29,7 +31,7 @@ public class AddEvent extends AppCompatActivity {
     private String day;
     private AlarmManager alarmManager;
     private PendingIntent pendingIntent;
-    private Calendar calendar;
+    private Calendar cal;
 
     @SuppressLint("SetTextI18n")
     @Override
@@ -131,21 +133,35 @@ public class AddEvent extends AppCompatActivity {
                 returnIntent.putExtra("alarm","");
             setResult(Activity.RESULT_OK,returnIntent);
 
-            /*
+
             if(binding.btnEditEventAlarm.isChecked()) {
-                // createNotificationChannel();
+                 createNotificationChannel();
 
-                calendar = Calendar.getInstance();
-                Log.d("AddEvent", "Time: " + calendar.get(Calendar.HOUR_OF_DAY) + ":" + calendar.get(Calendar.MINUTE));
 
-                calendar.set(Calendar.HOUR_OF_DAY, Integer.parseInt(binding.etEditAlarmTimeHr.getText().toString()));
-                calendar.set(Calendar.MINUTE,Integer.parseInt(binding.etEditAlarmTimeMin.getText().toString()));
-                calendar.set(Calendar.SECOND,0);
-                calendar.set(Calendar.MILLISECOND,0);
+                int hour = Integer.parseInt(binding.etEditAlarmTimeHr.getText().toString());
+                int minute = Integer.parseInt(binding.etEditAlarmTimeMin.getText().toString());
+                int day = Integer.parseInt(this.day);
+                int year = Integer.parseInt("2021");
 
-                setAlarm();
+                cal = Calendar.getInstance();
+                cal.set(Calendar.DAY_OF_MONTH, day);
+
+                cal.set(Calendar.YEAR, year);
+                cal.set(Calendar.HOUR_OF_DAY, hour);
+                cal.set(Calendar.MINUTE, minute);
+                cal.set(Calendar.SECOND, 0);
+                cal.set(Calendar.MILLISECOND, 0);
+
+                alarmManager = (AlarmManager) getSystemService(Context.ALARM_SERVICE);
+                Intent intent = new Intent(AddEvent.this, NotifyReceiver.class);
+                pendingIntent = PendingIntent.getBroadcast(getApplicationContext(), 0, intent, 0);
+                alarmManager.setExact(AlarmManager.RTC_WAKEUP, cal.getTimeInMillis(), pendingIntent);
+
+
+
+
             }
-            */
+
 
             if(binding.btnEditEventEmail.isChecked()) {
                 Intent send = new Intent(Intent.ACTION_SEND);
@@ -156,34 +172,7 @@ public class AddEvent extends AppCompatActivity {
                 send.setType("message/rfc822");
                 startActivity(Intent.createChooser(send, "Send To:"));
 
-                /*
-                Properties properties = new Properties();
-                properties.put("mail.smtp.auth", "true");
-                properties.put("mail.smtp.starttls.enable", "true");
-                properties.put("mail.smtp.host", "smtp.gmail.com");
-                properties.put("mail.smtp.port", "567");
 
-                //Session
-                Session session = Session.getInstance(properties, new Authenticator() {
-                    @Override
-                    protected PasswordAuthentication getPasswordAuthentication() {
-                        return new PasswordAuthentication(email, pass);
-                    }
-                });
-
-                //Message
-                Message message = new MimeMessage(session);
-
-                try {
-                    message.setFrom(new InternetAddress(email));
-                    message.setRecipients(Message.RecipientType.TO, InternetAddress.parse(etSendTo.getText().toString().trim()));
-                    message.setSubject(etTitle.getText().toString().trim());
-                    message.setText("Time: " + etTimeHr.getText().toString() + ":" + etTimeMin.getText().toString() + "\nDetails: " + etDetails.getText().toString().trim());
-                    Transport.send(message);
-                } catch (MessagingException e) {
-                    e.printStackTrace();
-                }
-                */
             }
             finish();
 
@@ -249,6 +238,18 @@ public class AddEvent extends AppCompatActivity {
         }
     }
     */
+    private void createNotificationChannel() {
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
+            CharSequence name = "alarmChannel";
+            String description = "Channel for Alarm Manager";
+            int importance = NotificationManager.IMPORTANCE_HIGH;
+            NotificationChannel channel = new NotificationChannel("alarm", name, importance);
+            channel.setDescription(description);
+
+            NotificationManager notificationManager = getSystemService(NotificationManager.class);
+            notificationManager.createNotificationChannel(channel);
+        }
+    }
 }
 
 
