@@ -67,5 +67,8 @@ public class SignUp2 extends AppCompatActivity {
                 }.start();
             }
         });
+        binding.btnBack.setOnClickListener(v -> {
+            finish();
+        });
     }
 }
