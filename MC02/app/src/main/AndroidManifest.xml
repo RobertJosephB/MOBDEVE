@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03">
-    <uses-permission android:name="android.permission.INTERNET"/>
 
+    <uses-permission android:name="android.permission.INTERNET" />
 
     <application
         android:allowBackup="true"
@@ -11,7 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.MC02">
-        <activity android:name=".ChangeMonth"></activity>
+        <activity android:name=".SetAlarms"></activity>
+        <activity android:name=".ChangeMonth" />
         <activity android:name=".Welcome">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -26,10 +27,9 @@
         <activity android:name=".Events_DaySpecific" />
         <activity android:name=".EditEvent" />
         <activity android:name=".AddEvent" />
-        <activity android:name=".SingleEvent"/>
-        <receiver
-            android:name=".util.NotifyReceiver">
-        </receiver>
+        <activity android:name=".SingleEvent" />
+
+        <receiver android:name=".util.NotifyReceiver"/>
     </application>
 
 </manifest>

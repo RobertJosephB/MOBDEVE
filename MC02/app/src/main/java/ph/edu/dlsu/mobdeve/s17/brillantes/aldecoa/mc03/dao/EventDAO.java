@@ -8,7 +8,7 @@ public interface EventDAO {
     long addEvent(EventModel event);
     ArrayList<EventModel> getEvents();
 
-    ArrayList<EventModel> getDayEvents(String month,String year, String day);
+    ArrayList<EventModel> getDayEvents(String month, String year, String day);
     ArrayList<EventModel> getMonthEvents(String month);
     EventModel getEvent(int eventId);
     int updateEvent(EventModel event);

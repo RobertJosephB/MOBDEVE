@@ -21,22 +21,12 @@ public class EventsMainAdapter
 
     private Context context;
     private ArrayList<DayModel> currentMonthDays;
-
-    private ArrayList<EventModel> data = new ArrayList<>();
     private ViewClickListener listener;
 
-
-
-
-    public EventsMainAdapter(Context context, ArrayList<DayModel> currentMonthDays,ViewClickListener listener) {
+    public EventsMainAdapter(Context context, ArrayList<DayModel> currentMonthDays, ViewClickListener listener) {
         this.context = context;
         this.currentMonthDays = currentMonthDays;
         this.listener = listener;
-
-
-
-
-
     }
 
     public void updateList (ArrayList<DayModel> newMonthDays) {
@@ -62,7 +52,7 @@ public class EventsMainAdapter
     }
 
     public interface ViewClickListener{
-        void onClick(View v,int position);
+        void onClick(View v, int position);
     }
 
     @Override
@@ -71,7 +61,6 @@ public class EventsMainAdapter
 
         EventsMainViewHolder eventsMainViewHolder = new EventsMainViewHolder(view);
 
-
         return eventsMainViewHolder;
     }
 
@@ -79,8 +68,6 @@ public class EventsMainAdapter
     public void onBindViewHolder(EventsMainAdapter.EventsMainViewHolder holder, int position) {
         holder.tv_dayNumber.setText(this.currentMonthDays.get(position).getDayNumber());
         holder.tv_monthName.setText(this.currentMonthDays.get(position).getMonthName());
-
-
 
         if (this.currentMonthDays.get(position).getEvents().size() == 1
             && this.currentMonthDays.get(position).getEvents().get(0).getEventTitle().equals("No events")) {

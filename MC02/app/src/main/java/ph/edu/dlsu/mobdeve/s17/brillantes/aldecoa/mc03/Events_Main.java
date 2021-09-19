@@ -44,16 +44,13 @@ public class Events_Main extends AppCompatActivity {
 
         Log.i(LOG_TAG, "onCreate()");
 
-
         super.onCreate(savedInstanceState);
         binding = ActivityEventsMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
         Bundle extras = getIntent().getExtras();
         userID = extras.getString("userID");
         email = extras.getString("email");
-        eventDAO  = new EventDAOFirebaseImpl(getApplicationContext(),userID);
-
-
+        eventDAO = new EventDAOFirebaseImpl(getApplicationContext(), userID);
 
         this.calendar = new CalendarModel();
         this.storagePreferences = new StoragePreferences(this);
@@ -67,7 +64,6 @@ public class Events_Main extends AppCompatActivity {
         int currentYearIndex = -1;
         String displayedMonth = "";
         String displayedYear = "";
-
 
         int i;
 
@@ -88,8 +84,6 @@ public class Events_Main extends AppCompatActivity {
 
         this.currentMonth = tempCurrentYear.get(currentMonthIndex).getMonthName();
         this.currentMonthDays = tempCurrentYear.get(currentMonthIndex).getDays();
-
-
 
         switch (this.currentMonth) {
             case "January":     displayedMonth = "JAN.";    break;
@@ -116,14 +110,11 @@ public class Events_Main extends AppCompatActivity {
         this.storagePreferences.saveStringPreferences("oldCurrentYear", this.currentYear);
         this.storagePreferences.saveStringPreferences("currentYear", this.currentYear);
 
-
-
         setOnClickListener();
 
-        eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays,listener);
+        eventsMainAdapter = new EventsMainAdapter(getApplicationContext(), this.currentMonthDays, listener);
         binding.rvEventMainList.setLayoutManager(new LinearLayoutManager(getApplicationContext()));
         binding.rvEventMainList.setAdapter(eventsMainAdapter);
-
 
         binding.tvCurrentMonth.setOnClickListener( v -> {
             Intent changeMonth = new Intent(Events_Main.this, ChangeMonth.class);
@@ -132,14 +123,25 @@ public class Events_Main extends AppCompatActivity {
 
             startActivity(changeMonth);
         });
+        
         binding.logoutMain.setOnClickListener( v -> {
             Intent welcome = new Intent(Events_Main.this, Welcome.class);
 
             startActivity(welcome);
             finish();
         });
-        Handler handler_data = new Handler();
 
+        binding.btnSetAlarms.setOnClickListener( v -> {
+            Intent setAlarms = new Intent(Events_Main.this, SetAlarms.class);
+            Bundle bundle = new Bundle();
+
+            bundle.putString("userID", this.userID);
+            setAlarms.putExtras(bundle);
+
+            startActivity(setAlarms);
+        });
+
+        Handler handler_data = new Handler();
         Runnable runnable_data = new Runnable() {
             @Override
             public void run() {
@@ -176,13 +178,13 @@ public class Events_Main extends AppCompatActivity {
             }
         };
         handler_data.postDelayed(runnable_data, 4000);
-        Handler handler = new Handler();
 
+
+        Handler handler = new Handler();
         Runnable runnable = new Runnable() {
             @Override
             public void run() {
                 eventsMainAdapter.updateList(currentMonthDays);
-
 
                 eventsMainAdapter.notifyDataSetChanged();
 

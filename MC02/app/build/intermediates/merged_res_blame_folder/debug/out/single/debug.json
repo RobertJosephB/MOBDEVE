@@ -12,8 +12,12 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_change_month.xml"
     },
     {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\navigation_nav_graph.xml.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\navigation\\nav_graph.xml"
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_main.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_check.png.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable-v24\\check.png"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_events_main.xml.flat",
@@ -60,6 +64,10 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher.png"
     },
     {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_events.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_events.xml"
+    },
+    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_welcome.xml.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_welcome.xml"
     },
@@ -70,6 +78,10 @@
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_event_main.xml.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_event_main.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_set_alarms.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_set_alarms.xml"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up2.xml.flat",
@@ -88,12 +100,32 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\font\\economicabolditalic.ttf"
     },
     {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_add.png.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable-v24\\add.png"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_log_in_2.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_log_in_2.xml"
+    },
+    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\font_economicabold.ttf.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\font\\economicabold.ttf"
     },
     {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_edit.png.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable-v24\\edit.png"
+    },
+    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_set_alarm.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_set_alarm.xml"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_checkmark.png.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable-v24\\checkmark.png"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up.xml.flat",
@@ -112,20 +144,12 @@
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\mipmap-mdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_item_change_month.xml.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\item_change_month.xml"
-    },
-    {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-hdpi_ic_launcher.png.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\mipmap-hdpi\\ic_launcher.png"
     },
     {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable_blank_pic.png.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable\\blank_pic.png"
-    },
-    {
-        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_event_small.xml.flat",
-        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\event_small.xml"
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_sign_up_2.xml.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\layout\\activity_sign_up_2.xml"
     },
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\layout_activity_events_dayspecific.xml.flat",
@@ -138,5 +162,9 @@
     {
         "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\mipmap-xxxhdpi_ic_launcher_round.png.flat",
         "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\mipmap-xxxhdpi\\ic_launcher_round.png"
+    },
+    {
+        "merged": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\build\\intermediates\\res\\merged\\debug\\drawable-v24_blank_pic.png.flat",
+        "source": "C:\\Users\\geloa\\AndroidStudioProjects\\MC02\\app\\src\\main\\res\\drawable-v24\\blank_pic.png"
     }
 ]

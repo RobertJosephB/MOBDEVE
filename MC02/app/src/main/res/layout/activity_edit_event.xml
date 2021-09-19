@@ -318,6 +318,7 @@
                 android:textColor="@color/black"
                 android:textOff="No Alarm"
                 android:textOn="Alarm" />
+
             <ToggleButton
                 android:id="@+id/btn_edit_event_email"
                 android:layout_width="100dp"

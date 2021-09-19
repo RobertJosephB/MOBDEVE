@@ -34,6 +34,7 @@ public class EventModel implements Serializable {
     public int getEventId() {
         return eventId;
     }
+
     public void setEventId(int id) {
         this.eventId = id;
     }
@@ -84,9 +85,7 @@ public class EventModel implements Serializable {
 
     public void setNotificationType(String notificationType) { this.notificationType = notificationType; }
 
-    public String getNotificationTime() {
-        return notificationTime;
-    }
+    public String getNotificationTime() { return notificationTime; }
 
     public void setNotificationTime(String notificationTime) { this.notificationTime = notificationTime; }
 

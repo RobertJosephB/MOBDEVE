@@ -1,65 +1,125 @@
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/CalendarModel.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.CalendarModel
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ItemEventMainBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ItemEventMainBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ItemEventDayspecificBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ItemEventDayspecificBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityEditEventBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEditEventBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySingleEventBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySingleEventBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/util/StoragePreferences.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.util.StoragePreferences
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityEventsDayspecificBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEventsDayspecificBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityEventsMainBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityEventsMainBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/SignUp.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySignUp2Binding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySignUp2Binding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/ChangeMonthAdapter.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.ChangeMonthAdapter$ChangeMonthViewHolder
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityLogInBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityLogInBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/SignUp2.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.SignUp2$1
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/MonthModel.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.MonthModel
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/EventModel.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.EventModel
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityChangeMonthBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityChangeMonthBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/DayModel.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.DayModel
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivityWelcomeBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivityWelcomeBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_DaySpecific.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_DaySpecific
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/BuildConfig.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.BuildConfig
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ItemChangeMonthBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ItemChangeMonthBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/LogIn.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.LogIn
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventAdapter.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventAdapter$EventViewHolder
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/ActivitySignUpBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.ActivitySignUpBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Welcome.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Welcome$1
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/models/YearModel.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.models.YearModel
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/databinding/EventSmallBinding.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.databinding.EventSmallBinding
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/adapters/EventsMainAdapter.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.adapters.EventsMainAdapter$EventsMainViewHolder
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/ChangeMonth.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.ChangeMonth
-ph/edu/dlsu/mobdeve/s17/brillantes/robert/mc02/Events_Main.java
- ph.edu.dlsu.mobdeve.s17.brillantes.robert.mc02.Events_Main
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityEventsDayspecificBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsDayspecificBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/UserModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.UserModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/EditEvent.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.EditEvent
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ItemEventDayspecificBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ItemEventDayspecificBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivitySignUp2Binding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySignUp2Binding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityEventsMainBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsMainBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivitySetAlarmsBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySetAlarmsBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/SignUp.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivitySingleEventBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySingleEventBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/MonthModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.MonthModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/util/StoragePreferences.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.util.StoragePreferences
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityMainBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityMainBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityEventsBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEventsBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/Events_DaySpecific.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific$2
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_DaySpecific$3
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityLogIn2Binding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityLogIn2Binding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ItemSetAlarmBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ItemSetAlarmBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/UserDAOFirebaseImpl.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl$2
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAOFirebaseImpl$3
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/SignUp2.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp2
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SignUp2$1
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/EventDatabase.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDatabase
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/Welcome.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Welcome
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Welcome$1
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/CalendarModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.CalendarModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityChangeMonthBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityChangeMonthBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivitySignUpBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivitySignUpBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ItemEventMainBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ItemEventMainBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/YearModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.YearModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/UserDAO.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.UserDAO
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/AddEvent.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.AddEvent
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/adapters/EventAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventAdapter$EventViewHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/MainActivity.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.MainActivity
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityWelcomeBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityWelcomeBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/ChangeMonth.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.ChangeMonth
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/BuildConfig.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.BuildConfig
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityEditEventBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityEditEventBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/databinding/ActivityLogInBinding.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.databinding.ActivityLogInBinding
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/EventModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.EventModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/adapters/EditEventAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EditEventAdapter
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/adapters/SetAlarmsAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.SetAlarmsAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.SetAlarmsAdapter$OnItemClickListener
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.SetAlarmsAdapter$SetAlarmsViewHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/models/DayModel.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.models.DayModel
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/EventDAO.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAO
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/SingleEvent.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SingleEvent$1$1
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/adapters/EventsMainAdapter.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventsMainAdapter
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventsMainAdapter$EventsMainViewHolder
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.adapters.EventsMainAdapter$ViewClickListener
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/EditEventHolder.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.EditEventHolder
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/EventDAOFirebaseImpl.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$2
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$3
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$4
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$5
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$6
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOFirebaseImpl$7
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/dao/EventDAOSQLImpl.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.dao.EventDAOSQLImpl
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/LogIn.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.LogIn
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.LogIn$1
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/util/NotifyReceiver.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.util.NotifyReceiver
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/Events_Main.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main$1$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main$2
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Events_Main$3
+ph/edu/dlsu/mobdeve/s17/brillantes/aldecoa/mc03/SetAlarms.java
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SetAlarms
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SetAlarms$1
+ ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.SetAlarms$2

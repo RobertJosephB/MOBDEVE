@@ -119,10 +119,6 @@ public class Events_DaySpecific extends AppCompatActivity {
                     eventDAO.addEvent(temp);
                     eventList = eventDAO.getDayEvents(displayedMonth,year,day);
                     eventAdapter.updateList(eventList);
-
-
-
-
                 }
             }
         });
