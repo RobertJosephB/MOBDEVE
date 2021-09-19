@@ -1,20 +1,15 @@
 package ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.util;
 
-import android.app.AlertDialog;
-import android.app.Dialog;
 import android.app.PendingIntent;
 import android.content.BroadcastReceiver;
+import android.content.ContentResolver;
 import android.content.Context;
-import android.content.DialogInterface;
 import android.content.Intent;
 import android.media.MediaPlayer;
-import android.media.Ringtone;
-import android.media.RingtoneManager;
 import android.net.Uri;
 import android.os.CountDownTimer;
+import android.os.Environment;
 import android.os.Vibrator;
-import android.view.LayoutInflater;
-import android.view.View;
 
 import androidx.core.app.NotificationCompat;
 import androidx.core.app.NotificationManagerCompat;
@@ -23,6 +18,7 @@ import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.R;
 import ph.edu.dlsu.mobdeve.s17.brillantes.aldecoa.mc03.Welcome;
 
 public class NotifyReceiver extends BroadcastReceiver {
+    String alarmPath = "";
     @Override
     public void onReceive(Context context, Intent intent) {
 
@@ -42,9 +38,11 @@ public class NotifyReceiver extends BroadcastReceiver {
         Vibrator vib = (Vibrator) context.getSystemService(Context.VIBRATOR_SERVICE);
         // Vibrate for 500 milliseconds
         vib.vibrate(500);
-
-
-        MediaPlayer mediaPlayer = MediaPlayer.create(context, R.raw.alarm);
+        MediaPlayer mediaPlayer;
+        if(alarmPath.equals(""))
+            mediaPlayer = MediaPlayer.create(context, R.raw.alarm);
+        else
+            mediaPlayer = MediaPlayer.create(context, Uri.parse(Environment.getExternalStorageDirectory().getPath()+ alarmPath));
         mediaPlayer.start();
         mediaPlayer.setLooping(true);
         new CountDownTimer(5000, 1000) {
@@ -64,6 +62,5 @@ public class NotifyReceiver extends BroadcastReceiver {
         notificationManagerCompat.notify(123, builder.build());
 
     }
-
 
 }

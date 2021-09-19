@@ -99,7 +99,7 @@ public class SingleEvent extends AppCompatActivity {
                     binding.tvDetails.setText(newDetails);
                     binding.tvEventTitle.setText(newTitle);
                     binding.tvNotifyType.setText(newAlarm);
-                    binding.tvTime.setText(newTime);
+                    binding.tvTime.setText(newTime.substring(0,2)+":"+newTime.substring(2,4));
 
 
 
@@ -117,8 +117,7 @@ public class SingleEvent extends AppCompatActivity {
         {
             binding.tvEventTitle.setText("WHOLE DAY");
         }
-        binding.tvNotifyType.setText(alarm);
-        binding.tvTime.setText(time);
+        binding.tvTime.setText(time.substring(0,2)+":"+time.substring(2,4));
 
 
         setContentView(binding.getRoot());
